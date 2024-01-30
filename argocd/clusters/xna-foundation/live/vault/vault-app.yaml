@@ -57,12 +57,6 @@ spec:
                   retry_join {
                     leader_api_addr = "http://vault-helm-0.vault-helm-internal:8200"
                   }
-                  retry_join {
-                    leader_api_addr = "http://vault-helm-1.vault-helm-internal:8200"
-                  }
-                  retry_join {
-                    leader_api_addr = "http://vault-helm-2.vault-helm-internal:8200"
-                  }
 
                 }
                 service_registration "kubernetes" {}            
