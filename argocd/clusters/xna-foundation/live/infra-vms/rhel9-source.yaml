@@ -1,0 +1,15 @@
+apiVersion: cdi.kubevirt.io/v1beta1
+kind: DataVolume
+metadata:
+  name: rhel9-image
+  namespace: infra-vms
+  annotations:
+    cdi.kubevirt.io/storage.deleteAfterCompletion: "false"
+spec:
+  source:
+    http:
+      url: http://172.18.60.20/rhel-9.3-x86_64-kvm.qcow2
+  storage:
+    resources:
+      requests:
+        storage: 10Gi
