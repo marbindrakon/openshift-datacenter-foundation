@@ -14,11 +14,6 @@ spec:
         global:
           openshift: true
           tlsDisable: true
-          route:
-            enabled: true
-            tls:
-              termination: edge
-            host: vault.apps.xna-foundation.rho.lab.signal9.gg
         injector:
           image:
             repository: "bastion.rho.lab.signal9.gg:8443/mirror/hashicorp/vault-k8s"
@@ -29,6 +24,12 @@ spec:
             tag: "1.15.2-ubi"
         
         server:
+          route:
+            enabled: true
+            tls:
+              termination: edge
+            host: vault.apps.xna-foundation.rho.lab.signal9.gg
+
           image:
             repository: "bastion.rho.lab.signal9.gg:8443/mirror/hashicorp/vault"
             tag: "1.15.2-ubi"
