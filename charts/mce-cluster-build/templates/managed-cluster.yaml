@@ -1,0 +1,17 @@
+{{- if .Values.cluster.importToHub -}}
+apiVersion: cluster.open-cluster-management.io/v1
+kind: ManagedCluster
+metadata:
+  labels:
+    cloud: {{ .Values.provider.type }}
+    name: {{ .Values.cluster.name }}
+    vendor: OpenShift
+    spoke-gitops: 'true'
+    gitops-type: {{ .Values.cluster.type }}
+  name: {{ .Values.cluster.name }}
+  annotations:
+    argocd.argoproj.io/compare-options: IgnoreExtraneous
+    argocd.argoproj.io/sync-wave: '1'
+spec:
+  hubAcceptsClient: true
+{{ end }}

@@ -1,0 +1,11 @@
+{{- if .Values.disconnectedSources.managed -}}
+apiVersion: operator.openshift.io/v1alpha1
+kind: ImageContentSourcePolicy
+metadata:
+  name: image-policy
+spec:
+  repositoryDigestMirrors:
+{{ with .Values.disconnectedSources.repositoryDigestMirrors }}
+  {{ toYaml . | nindent 2 }}
+{{ end }}
+{{ end }}

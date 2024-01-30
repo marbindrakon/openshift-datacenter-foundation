@@ -1,0 +1,70 @@
+apiVersion: hive.openshift.io/v1
+kind: ClusterDeployment
+metadata:
+  name: {{ .Values.cluster.name }}
+  namespace: {{ .Values.cluster.name }}
+  labels:
+    cloud: {{ .Values.provider.type }}
+    vendor: 'OpenShift'
+  annotations:
+    argocd.argoproj.io/sync-wave: '1'
+spec:
+{{ if eq .Values.provider.type "InfraEnv" }}
+  clusterInstallRef:
+    group: extensions.hive.openshift.io
+    kind: AgentClusterInstall
+    name: {{ .Values.cluster.name }}
+    version: v1beta1
+{{ end }}
+  baseDomain: {{ .Values.cluster.baseDomain }}
+  clusterName: {{ .Values.cluster.name }}
+  controlPlaneConfig:
+    servingCertificates: {}
+  installAttemptsLimit: 3
+  installed: false
+  platform:
+{{ if eq .Values.provider.type "InfraEnv" }}
+    agentBareMetal:
+      agentSelector:
+        matchLabels:
+          agentclusterinstalls.extensions.hive.openshift.io/location: {{ .Values.cluster.name }}
+{{ end }}
+{{ if eq .Values.provider.type "vSphere" }}
+    vsphere:
+      certificatesSecretRef:
+        name: {{ .Values.cluster.name }}-trust
+      cluster: {{ .Values.provider.vsphere.cluster }}
+      credentialsSecretRef:
+        name: {{ .Values.cluster.name }}-provider-creds
+      datacenter: {{ .Values.provider.vsphere.datacenter }}
+      defaultDatastore: {{ .Values.provider.vsphere.defaultDatastore }}
+      network: {{ .Values.provider.vsphere.network }}
+      vCenter: {{ .Values.provider.vsphere.vcenterHost }}
+{{ if .Values.provider.vsphere.folder }}
+      folder: {{ .Values.provider.vsphere.folder }}
+{{ end }}
+{{ end }}
+{{ if eq .Values.provider.type "OpenStack" }}
+    openstack:
+      certificatesSecretRef:
+        name: {{ .Values.cluster.name }}-trust
+      credentialsSecretRef:
+        name: {{ .Values.cluster.name }}-provider-creds
+      cloud: openstack
+{{ end }}
+{{ if not (eq .Values.provider.type "InfraEnv") }}
+  provisioning:
+    installConfigSecretRef:
+      name: {{ .Values.cluster.name }}-install-config
+    sshPrivateKeySecretRef:
+      name: {{ .Values.cluster.name }}-ssh-key
+{{ if .Values.cluster.clusterImageSet }}
+    imageSetRef:
+      name: {{ .Values.cluster.clusterImageSet }}
+{{ end }}
+{{ if .Values.cluster.releaseImage }}
+    releaseImage: {{ .Values.cluster.releaseImage }}
+{{ end }}
+{{ end }}
+  pullSecretRef:
+    name: {{ .Values.cluster.name }}-pull-secret

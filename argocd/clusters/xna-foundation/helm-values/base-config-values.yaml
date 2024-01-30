@@ -1,0 +1,216 @@
+cluster:
+  name: xna-foundation
+  baseDomain: rho.lab.signal9.gg
+  trustedCABundle: |
+    -----BEGIN CERTIFICATE-----
+    MIID9DCCAtygAwIBAgIUChDVXSavo+UD/TL6UsPTWSu5Vu4wDQYJKoZIhvcNAQEL
+    BQAwdDELMAkGA1UEBhMCVVMxCzAJBgNVBAgMAlZBMREwDwYDVQQHDAhOZXcgWW9y
+    azENMAsGA1UECgwEUXVheTERMA8GA1UECwwIRGl2aXNpb24xIzAhBgNVBAMMGmJh
+    c3Rpb24ucmhvLmxhYi5zaWduYWw5LmdnMB4XDTI0MDExMTE0MTk1N1oXDTI2MTAz
+    MTE0MTk1N1owdDELMAkGA1UEBhMCVVMxCzAJBgNVBAgMAlZBMREwDwYDVQQHDAhO
+    ZXcgWW9yazENMAsGA1UECgwEUXVheTERMA8GA1UECwwIRGl2aXNpb24xIzAhBgNV
+    BAMMGmJhc3Rpb24ucmhvLmxhYi5zaWduYWw5LmdnMIIBIjANBgkqhkiG9w0BAQEF
+    AAOCAQ8AMIIBCgKCAQEAtbEWekWUIy40El+dZJAk8t652T3rcNpx8wIpq9+K1zJP
+    I06//8sQkHBRYubG28+ahT3HvqGw4zLiuv00EX2aKYPMrhwlpkHsrhqRJ5FWP/Wz
+    Ydy94FakyviFHRkLFNwg8fIH8xxqZPuoQlzCLMycuE2IA70299BNaFwEcTogOkgo
+    hqA6zuWFI2Zv/FUPbfhjm8aHiZmaAhpk5Zut2504CuYvWixi4xC5ZTW2fO+hOD34
+    Ipc+1SJgOREMDNzI9ix7oAZLmp30ouiAqOg3cVVecdTOF/NZLyfiprmHp2MJx/Yb
+    i4Q92v6b3DiuHjU6QP/tFPxN7jpJlYlAWl4NzT6UZwIDAQABo34wfDALBgNVHQ8E
+    BAMCAuQwEwYDVR0lBAwwCgYIKwYBBQUHAwEwJQYDVR0RBB4wHIIaYmFzdGlvbi5y
+    aG8ubGFiLnNpZ25hbDkuZ2cwEgYDVR0TAQH/BAgwBgEB/wIBATAdBgNVHQ4EFgQU
+    ucTcFhHDOVqO5kKCDvXQzvPNwEkwDQYJKoZIhvcNAQELBQADggEBAKyoNoxSQI2Q
+    VtdVueW0BI8XuM0TsV5NCAKlUy7KTVOQzCJcP5q41POTgz6M7RZ0f1kf0Y3uslZB
+    yNAI/4xpI3ImuOeG8OT04qDT/v27qNbjqZaaDCz1iGDVAR1Y7dIFMe4KanUr56GM
+    YN0Db+jT0UGOWINV1KqZJxZmowIt7WztBSU6BP1s7bUgTql6QzFNn7VzjynAWESe
+    Jr/fRwT3LFmHirg5rg/QpZFs5/PF5OR/VSe+lu5SBJOlLWr5Ykb08ccY688oVtM9
+    Bm7SEbJue9ZvwVsQWlSPiZbk08pjKTQeolQCVYNWMUdfZAu8RYDp8XsCPEE6sdW6
+    JWS084L9hgk=
+    -----END CERTIFICATE-----
+    -----BEGIN CERTIFICATE-----
+    MIICkTCCAhagAwIBAgIUX1Cm8VWt4ki4+8XH7oKsYYKJM+QwCgYIKoZIzj0EAwIw
+    dzELMAkGA1UEBhMCVVMxETAPBgNVBAgMCEFya2Fuc2FzMQ8wDQYDVQQHDAZSb2dl
+    cnMxFTATBgNVBAoMDFNpZ25hbDkgTGFiczEMMAoGA1UECwwDWE5BMR8wHQYDVQQD
+    DBZTaWduYWw5IFJvb3QgQXV0aG9yaXR5MB4XDTIxMDMwMTA0MDMwNFoXDTQxMDIy
+    NDA0MDMwNFowdzELMAkGA1UEBhMCVVMxETAPBgNVBAgMCEFya2Fuc2FzMQ8wDQYD
+    VQQHDAZSb2dlcnMxFTATBgNVBAoMDFNpZ25hbDkgTGFiczEMMAoGA1UECwwDWE5B
+    MR8wHQYDVQQDDBZTaWduYWw5IFJvb3QgQXV0aG9yaXR5MHYwEAYHKoZIzj0CAQYF
+    K4EEACIDYgAE5w5BHLiaagf5eSNkQYuDIdyWe7ULLY2z2qAP1fKXM+RrSHQQb5x1
+    Q9+IhQRhf7exw/pJS5Vs1R8IyQ3B8r6xz885w6+Fk6iyMAlFn979RU6V5lbxMRGG
+    Vxq/CEL/iorVo2MwYTAdBgNVHQ4EFgQUYfO+q+KnTtIDK5OFXsVZ/D0ziiUwHwYD
+    VR0jBBgwFoAUYfO+q+KnTtIDK5OFXsVZ/D0ziiUwDwYDVR0TAQH/BAUwAwEB/zAO
+    BgNVHQ8BAf8EBAMCAYYwCgYIKoZIzj0EAwIDaQAwZgIxAJLOIPP9J1/mttvGdQtM
+    Prnm+r+JzVu8vd0r2HxgwloEkElTr29S+DAAE8XlUpoXpQIxALEd+sYGr1qENJqr
+    vHOvuo0diFSUxjvTjowus6kM6nZi1JR4rMycICsGgujg8zwVAw==
+    -----END CERTIFICATE-----   
+  gitOpsRepo: https://gitea.apps.xna-foundation.rho.lab.signal9.gg/rho-lab/gitops.git
+  gitOpsBasePath: argocd/clusters
+
+externalSecrets:
+  enabled: true
+  vaultBase: 'https://vault.xna-foundation.rho.lab.signal9.gg'
+  vaultAuthPath: 'k8s-xna-foundation'
+  secretBasePath: lab
+
+certManager:
+  enabled: false
+  apiCert: true
+  defaultIngressCert: true
+  acmeBase: 'https://idm-1.rho.lab.signal9.gg/acme/directory'
+  externalSecret:
+    name: dns-tsig-key
+    vaultName: dns-tsig-key
+  solvers:
+    - http01:
+        ingress: {}
+    - dns01:
+        rfc2136:
+          nameserver: 172.18.60.10
+          tsigKeyName: certmanager
+          tsigAlgorithm: HMACSHA256
+          tsigSecretSecretRef:
+            key: key
+            name: dns-tsig-key
+      selector:
+        dnsZones:
+          - rho.lab.signal9.gg
+
+monitoring:
+  enabled: false
+  storageClass: standard
+
+network:
+  hostRouting: true
+
+odfStorage:
+  enabled: true
+  version: '4.14'
+  external: true
+  externalSecret: null
+
+auth:
+  enabled: false
+  oidcDisplayName: Signal9-RHT
+  oidcClientID: openshift
+  oidcIssuer: https://login.home.signal9.gg/auth/realms/Signal9-RHT
+  externalSecret:
+    name: oauth-signal9-client-secret
+    vaultName: signal9-openid
+
+timesync:
+  enabled: true
+  ptp:
+    enabled: false
+    loadKvmModule: false
+    device: 'ptp_kvm'
+    sourceStratum: 2
+  ntpServers:
+    - 172.18.60.10
+
+gitops:
+  applicationControllerResources: {}
+
+disconnectedSources:
+  managed: true
+  repositoryDigestMirrors:
+    - mirrors:
+      - bastion.rho.lab.signal9.gg:8443/mirror/openshift/release-images
+      source: quay.io/openshift-release-dev/ocp-release
+    - mirrors:
+      - bastion.rho.lab.signal9.gg:8443/mirror/openshift/release
+      source: quay.io/openshift-release-dev/ocp-v4.0-art-dev
+    - mirrors:
+      - bastion.rho.lab.signal9.gg:8443/mirror/openshift-pipelines
+      source: registry.redhat.io/openshift-pipelines
+    - mirrors:
+      - bastion.rho.lab.signal9.gg:8443/mirror/container-native-virtualization
+      source: registry.redhat.io/container-native-virtualization
+    - mirrors:
+      - bastion.rho.lab.signal9.gg:8443/mirror/rhel8
+      source: registry.redhat.io/rhel8
+    - mirrors:
+      - bastion.rho.lab.signal9.gg:8443/mirror/rhacm2
+      source: registry.redhat.io/rhacm2
+    - mirrors:
+      - bastion.rho.lab.signal9.gg:8443/mirror/advanced-cluster-security
+      source: registry.redhat.io/advanced-cluster-security
+    - mirrors:
+      - bastion.rho.lab.signal9.gg:8443/mirror/odf4
+      source: registry.redhat.io/odf4
+    - mirrors:
+      - bastion.rho.lab.signal9.gg:8443/mirror/openshift-gitops-1
+      source: registry.redhat.io/openshift-gitops-1
+    - mirrors:
+      - bastion.rho.lab.signal9.gg:8443/mirror/openshift4
+      source: registry.redhat.io/openshift4
+    - mirrors:
+      - bastion.rho.lab.signal9.gg:8443/mirror/amq-streams
+      source: registry.redhat.io/amq-streams
+    - mirrors:
+      - bastion.rho.lab.signal9.gg:8443/mirror/compliance
+      source: registry.redhat.io/compliance
+    - mirrors:
+      - bastion.rho.lab.signal9.gg:8443/mirror/cluster-observability-operator
+      source: registry.redhat.io/cluster-observability-operator
+    - mirrors:
+      - bastion.rho.lab.signal9.gg:8443/mirror/openshift-logging
+      source: registry.redhat.io/openshift-logging
+    - mirrors:
+      - bastion.rho.lab.signal9.gg:8443/mirror/cert-manager
+      source: registry.redhat.io/cert-manager
+    - mirrors:
+      - bastion.rho.lab.signal9.gg:8443/mirror/rhbk
+      source: registry.redhat.io/rhbk
+    - mirrors:
+      - bastion.rho.lab.signal9.gg:8443/mirror/quay
+      source: registry.redhat.io/quay
+    - mirrors:
+      - bastion.rho.lab.signal9.gg:8443/mirror/albo
+      source: registry.redhat.io/albo
+    - mirrors:
+      - bastion.rho.lab.signal9.gg:8443/mirror/rh-sso-7
+      source: registry.redhat.io/rh-sso-7
+    - mirrors:
+      - bastion.rho.lab.signal9.gg:8443/mirror/multicluster-engine
+      source: registry.redhat.io/multicluster-engine
+    - mirrors:
+      - bastion.rho.lab.signal9.gg:8443/mirror/costmanagement
+      source: registry.redhat.io/costmanagement
+    - mirrors:
+      - bastion.rho.lab.signal9.gg:8443/mirror/edo
+      source: registry.redhat.io/edo
+    - mirrors:
+      - bastion.rho.lab.signal9.gg:8443/mirror/amq7
+      source: registry.redhat.io/amq7
+    - mirrors:
+      - bastion.rho.lab.signal9.gg:8443/mirror/ubi8
+      source: registry.redhat.io/ubi8
+    - mirrors:
+      - bastion.rho.lab.signal9.gg:8443/mirror/bitnami
+      source: docker.io/bitnami
+    - mirrors:
+      - bastion.rho.lab.signal9.gg:8443/mirror/gitea
+      source: docker.io/gitea
+    - mirrors:
+      - bastion.rho.lab.signal9.gg:8443/mirror/mta
+      source: registry.redhat.io/mta
+    - mirrors:
+      - bastion.rho.lab.signal9.gg:8443/mirror/community-operator-pipeline-prod
+      source: quay.io/community-operator-pipeline-prod
+    - mirrors:
+      - bastion.rho.lab.signal9.gg:8443/mirror/rhel8
+      source: registry.redhat.io/rhel8
+    - mirrors:
+      - bastion.rho.lab.signal9.gg:8443/mirror/external-secrets
+      source: ghcr.io/external-secrets
+    - mirrors:
+      - bastion.rho.lab.signal9.gg:8443/mirror/hashicorp
+      source: docker.io/hashicorp
+    - mirrors:
+      - bastion.rho.lab.signal9.gg:8443/mirror/hashicorp
+      source: registry.connect.redhat.com/hashicorp
+
+  catalogSources:
+    - name: redhat-operators
+      image: bastion.rho.lab.signal9.gg:8443/mirror/redhat/redhat-operator-index:v4.14
+    - name: community-operators
+      image: bastion.rho.lab.signal9.gg:8443/mirror/redhat/community-operator-index:v4.14

@@ -1,0 +1,52 @@
+cluster:
+  name: ocp4
+  baseDomain: lab.signal9.gg
+  gitOpsRepo: https://github.com/marbindrakon/rhte-2023-fleet-gitops.git
+  importToHub: true
+  createGitopsManifestWorks: false
+  createGitopsSyncSet: false
+  useACM: false
+  type: ocp
+  clusterImageSet: img4.11.17-x86-64-appsub
+  releaseImage: null
+  controlPlaneCount: 3
+  workerCount: 3
+  apiVIP: ""
+  ingressVIP: ""
+  pullSecretVault: ""
+  trustedCAs: ""
+  sshKeyVault: ""
+  sshPubKey: ""
+  dnsServers: []
+
+provider:
+  providerCredsVault: ""
+  providerCAs: ""
+  # Only used for vSphere IPI
+  installConfigVault: ""
+  # Can be OpenStack, InfraEnv, or vSphere
+  type: OpenStack
+  vsphere:
+    datacenter: ""
+    cluster: ""
+    defaultDatastore: ""
+    network: ""
+    folder: null
+    vcenterHost: ""
+  openstack:
+    existingImage: null
+    externalNetwork: ""
+    computeAZs: []
+    controlPlaneFlavor: m1.xlarge
+    workerFlavor: m1.large
+  infraenv:
+    # Override provider type on AgentClusterInstall (i.e. agent install on VSphere)
+    platformType: null
+    networkType: static
+    useExternalLB: true
+    machineCIDR: ""
+    ntpServers:
+      - 172.18.0.79
+      - 172.18.42.10
+      - 172.18.42.11
+    hostNetworkConfigs: {}

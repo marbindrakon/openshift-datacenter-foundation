@@ -1,0 +1,14 @@
+{{- if .Values.disconnectedSources.managed -}}
+{{ range .Values.disconnectedSources.catalogSources }}
+---
+apiVersion: operators.coreos.com/v1alpha1
+kind: CatalogSource
+metadata:
+  name: {{ .name }}
+  namespace: openshift-marketplace
+spec:
+  image: {{ .image }}
+  sourceType: grpc
+---
+{{ end }}
+{{ end }}

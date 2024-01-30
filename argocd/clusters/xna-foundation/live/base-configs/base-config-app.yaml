@@ -1,0 +1,23 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: base-config-chart
+  namespace: openshift-gitops
+spec:
+  destination:
+    namespace: openshift-gitops
+    server: "https://kubernetes.default.svc"
+  project: default
+  syncPolicy:
+    automated: {}
+    retry:
+      backoff:
+        maxDuration: 1m
+      limit: -1
+  source:
+    repoURL: "https://gitea.apps.xna-foundation.rho.lab.signal9.gg/rho-lab/gitops.git"
+    path: "charts/ocp-base-config"
+    targetRevision: HEAD
+    helm:
+      valueFiles:
+        - "../../argocd/clusters/xna-foundation/helm-values/base-config-values.yaml"
