@@ -1,0 +1,54 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: vault-helm
+  namespace: openshift-gitops
+spec:
+  project: default
+  source:
+    repoURL: 'https://gitea.apps.xna-foundation.rho.lab.signal9.gg/mirror/vault-helm.git'
+    targetRevision: v0.27.0
+    helm:
+      values: |
+        global:
+          openshift: true
+          tlsDisable: true
+          route:
+            enabled: true
+            tls:
+              termination: edge
+            host: vault.apps.xna-foundation.rho.lab.signal9.gg
+          ha:
+            enabled: true
+            replicas: 3
+            raft:
+              enabled: true
+              config: |
+                ui = true
+                listener "tcp" {
+                  tls_disable = 1
+                  address = "[::]:8200"
+                  cluster_address = "[::]:8201"
+                  # Enable unauthenticated metrics access (necessary for Prometheus Operator)
+                  telemetry {
+                    unauthenticated_metrics_access = "true"
+                  }
+                }
+                storage "raft" {
+                  path = "/vault/data"
+                  retry_join {
+                    leader_tls_servername = "vault.apps.xna-foundation.rho.lab.signal9.gg"
+                  }
+                }
+                service_registration "kubernetes" {}            
+  
+  destination:
+    server: 'https://kubernetes.default.svc'
+    namespace: vault
+  syncPolicy:
+    automated: {}
+  ignoreDifferences:
+    - group: admissionregistration.k8s.io
+      kind: MutatingWebhookConfiguration
+      jsonPointers:
+        - /webhooks/0/clientConfig/caBundle
