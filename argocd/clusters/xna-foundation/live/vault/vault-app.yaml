@@ -55,13 +55,13 @@ spec:
                 storage "raft" {
                   path = "/vault/data"
                   retry_join {
-                    leader_api_addr = "http://vault-helm-0.vault-internal:8200"
+                    leader_api_addr = "http://vault-helm-0.vault-helm-internal:8200"
                   }
                   retry_join {
-                    leader_api_addr = "http://vault-helm-1.vault-internal:8200"
+                    leader_api_addr = "http://vault-helm-1.vault-helm-internal:8200"
                   }
                   retry_join {
-                    leader_api_addr = "http://vault-helm-2.vault-internal:8200"
+                    leader_api_addr = "http://vault-helm-2.vault-helm-internal:8200"
                   }
 
                 }
