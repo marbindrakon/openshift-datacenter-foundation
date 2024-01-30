@@ -8,6 +8,7 @@ spec:
   source:
     repoURL: 'https://gitea.apps.xna-foundation.rho.lab.signal9.gg/mirror/vault-helm.git'
     targetRevision: v0.27.0
+    path: '.'
     helm:
       values: |
         global:
