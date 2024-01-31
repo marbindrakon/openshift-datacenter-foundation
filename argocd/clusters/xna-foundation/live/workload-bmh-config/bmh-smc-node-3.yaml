@@ -1,0 +1,20 @@
+apiVersion: metal3.io/v1alpha1
+kind: BareMetalHost
+metadata:
+  name: smc-node-3
+  namespace: openshift-machine-api
+  annotations:
+    argocd.argoproj.io/sync-options: "ServerSideApply=True"
+  labels:
+    compute-type: sandy-bridge
+    compute-model: smc
+spec:
+  automatedCleaningMode: metadata
+  online: false
+  bootMode: legacy
+  bootMACAddress: "00:25:90:85:75:7c"
+  preprovisioningNetworkDataName: smc-net-config
+  bmc:
+    address: 'ipmi://bmc-smc-node-3.oob.signal9.gg'
+    credentialsName: 'smc-node-3'
+    disableCertificateVerification: true
