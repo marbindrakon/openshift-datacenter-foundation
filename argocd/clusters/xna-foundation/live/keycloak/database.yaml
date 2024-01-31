@@ -51,7 +51,7 @@ spec:
                 secretKeyRef:
                   name: keycloak-db-creds
                   key: username
-            - name: POSTGRES_DATABASE
+            - name: POSTGRESQL_DATABASE
               value: keycloak
   volumeClaimTemplates:
   - metadata:
