@@ -22,16 +22,6 @@ stringData:
          port:
            - eno1
            - eno2
-     - name: provisioning
-       type: vlan
-       state: up
-       mtu: 1500
-       vlan:
-         id: 602
-         base-iface: bond0
-       ipv4:
-         enabled: false
-         dhcp: false
      - name: bond1
        type: bond
        mtu: 9000
