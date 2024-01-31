@@ -1,9 +1,9 @@
 apiVersion: v1
-kind: Secret
+kind: ConfigMap
 metadata:
   name: signal9-ca
   namespace: gitea
-stringData:
+data:
   ca.crt: |
     -----BEGIN CERTIFICATE-----
     MIIFazCCA1OgAwIBAgIRAIIQz7DSQONZRGPgu2OCiwAwDQYJKoZIhvcNAQELBQAw
