@@ -58,7 +58,3 @@ stringData:
        ipv4:
          enabled: true
          dhcp: true
-   dns-resolver:
-     config:
-       server:
-         - 172.18.60.10
