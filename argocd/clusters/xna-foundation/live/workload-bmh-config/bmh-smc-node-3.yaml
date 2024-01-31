@@ -18,3 +18,4 @@ spec:
     address: 'ipmi://bmc-smc-node-3.oob.signal9.gg'
     credentialsName: 'smc-node-3'
     disableCertificateVerification: true
+  networkData: smc-post-net-config

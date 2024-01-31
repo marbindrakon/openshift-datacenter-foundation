@@ -17,3 +17,4 @@ spec:
     address: 'ipmi://ilo-hp-blade-8.oob.signal9.gg'
     credentialsName: 'ilo-hp-blade-8'
     disableCertificateVerification: true
+  networkData: sl230-post-net-config
