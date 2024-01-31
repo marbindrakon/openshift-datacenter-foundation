@@ -12,6 +12,11 @@ spec:
       server: {{ .Values.externalSecrets.vaultBase }}
       path: {{ .Values.externalSecrets.secretBasePath }}
       version: "v2"
+      caProvier:
+        type: ConfigMap
+        namespace: external-secrets-operator
+        name: kube-root-ca.crt
+        key: ca.crt
       auth:
         kubernetes:
           mountPath: {{ .Values.externalSecrets.vaultAuthPath }}
