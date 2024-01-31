@@ -52,10 +52,10 @@ externalSecrets:
   secretBasePath: lab
 
 certManager:
-  enabled: false
+  enabled: true
   apiCert: true
   defaultIngressCert: true
-  acmeBase: 'https://idm-1.rho.lab.signal9.gg/acme/directory'
+  acmeBase: 'https://vault.apps.xna-foundation.rho.lab.signal9.gg/v1/rho-ca/acme/directory'
   externalSecret:
     name: dns-tsig-key
     vaultName: dns-tsig-key
