@@ -1,0 +1,76 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: gitea-helm
+  namespace: openshift-gitops
+spec:
+  destination:
+    server: 'https://kubernetes.default.svc'
+    namespace: gitea
+  syncPolicy:
+    automated: {}
+  project: default
+  source:
+    repoURL: 'https://gitea.apps.xna-foundation.rho.lab.signal9.gg/mirror/gitea-helm.git'
+    targetRevision: v10.1.0
+    path: '.'
+    helm:
+      values: |
+        gitea:
+          admin:
+            existingSecret: gitea-admin-secret
+        image:
+          rootless: false
+          registry: bastion.rho.lab.signal9.gg:8443/mirror
+        persistence:
+          enabled: true
+          storageClass: ocs-external-storagecluster-ceph-rbd
+        postgresql:
+          persistence:
+            enabled: true
+            storageClass: ocs-external-storagecluster-ceph-rbd
+        redis-cluster:
+          enabled: true
+        ingress:
+          enabled: true
+          hosts:
+            - host: gitea.apps.xna-foundation.rho.lab.signal9.gg
+        serviceAccount:
+          create: true
+        test:
+          image:
+            name: bastion.rho.lab.signal9.gg:8443/mirror/gitea/gitea
+            tag: 1.21.4-rootless
+        global:
+          imageRegistry: bastion.rho.lab.signal9.gg:8443/mirror
+        
+        postgresql-ha:
+          global:
+            imageRegistry: bastion.rho.lab.signal9.gg:8443/mirror
+          postgresql:
+            image:
+              tag: 16.1.0-debian-11-r19
+        
+          pgpool:
+            image:
+              tag: 4.5.0-debian-11-r1
+        
+          metrics:
+            image:
+              tag: 0.15.0-debian-11-r6
+        
+          volumePermissions:
+            image:
+              tag: 11-debian-11-r95
+        
+        redis-cluster:
+          global:
+            imageRegistry: bastion.rho.lab.signal9.gg:8443/mirror
+          image:
+            tag: 7.2.4-debian-11-r3
+          volumePermissions:
+            image:
+              tag: 11-debian-11-r95
+          metrics:
+            image:
+              tag: 1.56.0-debian-11-r1
