@@ -88,13 +88,13 @@ odfStorage:
   externalSecret: null
 
 auth:
-  enabled: false
-  oidcDisplayName: Signal9-RHT
-  oidcClientID: openshift
-  oidcIssuer: https://login.home.signal9.gg/auth/realms/Signal9-RHT
+  enabled: true
+  oidcDisplayName: RHO
+  oidcClientID: xna-foundation
+  oidcIssuer: https://sso.rho.lab.signal9.gg/realms/RHO
   externalSecret:
-    name: oauth-signal9-client-secret
-    vaultName: signal9-openid
+    name: oauth-client-secret
+    vaultName: xna-foundation-openid
 
 timesync:
   enabled: true
