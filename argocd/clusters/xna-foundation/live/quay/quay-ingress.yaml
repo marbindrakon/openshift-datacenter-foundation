@@ -10,7 +10,7 @@ spec:
   ingressClassName: openshift-default
   tls:
   - hosts:
-      - quay.signal9.gg
+      - quay.rho.lab.signal9.gg
     secretName: quay-cert
   rules:
   - host: quay.signal9.gg
