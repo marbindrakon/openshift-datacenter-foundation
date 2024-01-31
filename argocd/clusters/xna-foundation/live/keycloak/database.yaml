@@ -36,7 +36,7 @@ spec:
     spec:
       containers:
         - name: postgresql-db
-          image: bootstrap.rho.lab.signal9.gg:8443/mirror/rhel8/postgresql-12@sha256:493358aa1f1f9aa0862fca14e27f972f73a6356b5032fe3b372432f0b6db880a
+          image: bastion.rho.lab.signal9.gg:8443/mirror/rhel8/postgresql-12@sha256:493358aa1f1f9aa0862fca14e27f972f73a6356b5032fe3b372432f0b6db880a
           volumeMounts:
             - mountPath: /var/lib/pgsql/data
               name: pg-data
