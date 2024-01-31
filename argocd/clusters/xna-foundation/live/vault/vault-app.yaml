@@ -36,6 +36,9 @@ spec:
 
           readinessProbe:
             path: "/v1/sys/health?uninitcode=204"
+
+          podDisruptionBudget:
+            maxUnavailable: 2
      
           ha:
             enabled: true
