@@ -12,7 +12,7 @@ spec:
       server: {{ .Values.externalSecrets.vaultBase }}
       path: {{ .Values.externalSecrets.secretBasePath }}
       version: "v2"
-      caProvier:
+      caProvider:
         type: ConfigMap
         namespace: external-secrets-operator
         name: eso-ca-bundle
