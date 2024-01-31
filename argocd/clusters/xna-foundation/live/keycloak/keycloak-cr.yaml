@@ -1,0 +1,19 @@
+apiVersion: k8s.keycloak.org/v2alpha1
+kind: Keycloak
+metadata:
+  name: rho-sso
+spec:
+  instances: 1
+  db:
+    vendor: postgres
+    host: postgres-db
+    usernameSecret:
+      name: keycloak-db-creds
+      key: username
+    passwordSecret:
+      name: keycloak-db-creds
+      key: password
+  http:
+    tlsSecret: keycloak-cert
+  hostname:
+    hostname: sso.rho.lab.signal9.gg
