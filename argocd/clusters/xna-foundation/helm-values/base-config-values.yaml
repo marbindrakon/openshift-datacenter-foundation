@@ -47,7 +47,7 @@ cluster:
 
 externalSecrets:
   enabled: true
-  vaultBase: 'https://vault.xna-foundation.rho.lab.signal9.gg'
+  vaultBase: 'https://vault.apps.xna-foundation.rho.lab.signal9.gg'
   vaultAuthPath: 'k8s-xna-foundation'
   secretBasePath: lab
 
