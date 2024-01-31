@@ -15,7 +15,7 @@ spec:
       caProvier:
         type: ConfigMap
         namespace: external-secrets-operator
-        name: kube-root-ca.crt
+        name: eso-ca-bundle
         key: ca.crt
       auth:
         kubernetes:
