@@ -19,7 +19,7 @@ spec:
     - server auth
     - client auth
   dnsNames:
-    - 'quay.apps.xna-foundation.rho.lab.signal9.gg'
+    - 'quay.rho.lab.signal9.gg'
   issuerRef:
     name: cluster-acme
     kind: ClusterIssuer
