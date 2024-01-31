@@ -7,6 +7,12 @@ type: Opaque
 stringData:
  nmstate: | 
    interfaces:
+     - name: eno1
+       type: ethernet
+       state: down
+     - name: eno2
+       type: ethernet
+       state: down
      - name: bond0
        type: bond
        state: up
