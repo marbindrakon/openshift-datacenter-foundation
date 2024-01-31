@@ -1,11 +1,23 @@
 {{- if .Values.disconnectedSources.managed -}}
-apiVersion: operator.openshift.io/v1alpha1
-kind: ImageContentSourcePolicy
+---
+apiVersion: config.openshift.io/v1
+kind: ImageDigestMirrorSet
 metadata:
   name: image-policy
 spec:
-  repositoryDigestMirrors:
+  imageDigestMirrors:
 {{ with .Values.disconnectedSources.repositoryDigestMirrors }}
   {{ toYaml . | nindent 2 }}
 {{ end }}
+---
+apiVersion: config.openshift.io/v1
+kind: ImageTagMirrorSet
+metadata:
+  name: image-policy
+spec:
+  imageTagMirrors:
+{{ with .Values.disconnectedSources.repositoryTagMirrors }}
+  {{ toYaml . | nindent 2 }}
+{{ end }}
+
 {{ end }}

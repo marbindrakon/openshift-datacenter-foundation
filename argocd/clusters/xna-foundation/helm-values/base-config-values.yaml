@@ -199,6 +199,7 @@ disconnectedSources:
     - mirrors:
       - bastion.rho.lab.signal9.gg:8443/mirror/rhel8
       source: registry.redhat.io/rhel8
+  repositoryTagMirrors:
     - mirrors:
       - bastion.rho.lab.signal9.gg:8443/mirror/external-secrets
       source: ghcr.io/external-secrets
