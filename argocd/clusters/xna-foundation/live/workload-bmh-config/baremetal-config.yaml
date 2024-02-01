@@ -29,6 +29,7 @@ spec:
       values: |
         nodes:
         - name: xf-10.rho.lab.signal9.gg
+          deployed: true
           namespace: openshift-machine-api
           labels:
             compute-model: sl230
@@ -55,6 +56,7 @@ spec:
             mgmtIp: 172.18.63.10
             odfIp: 172.18.66.10
         - name: xf-11.rho.lab.signal9.gg
+          deployed: true
           namespace: openshift-machine-api
           labels:
             compute-model: sl230
@@ -81,6 +83,7 @@ spec:
             mgmtIp: 172.18.63.11
             odfIp: 172.18.66.11
         - name: xf-12.rho.lab.signal9.gg
+          deployed: true
           namespace: openshift-machine-api
           labels:
             compute-model: sl230
@@ -107,6 +110,7 @@ spec:
             mgmtIp: 172.18.63.12
             odfIp: 172.18.66.12
         - name: xf-13.rho.lab.signal9.gg
+          deployed: true
           namespace: openshift-machine-api
           labels:
             compute-model: sl230
@@ -133,6 +137,7 @@ spec:
             mgmtIp: 172.18.63.13
             odfIp: 172.18.66.13
         - name: xf-14.rho.lab.signal9.gg
+          deployed: true
           namespace: openshift-machine-api
           labels:
             compute-model: sl230
@@ -159,6 +164,7 @@ spec:
             mgmtIp: 172.18.63.14
             odfIp: 172.18.66.14
         - name: xf-15.rho.lab.signal9.gg
+          deployed: true
           namespace: openshift-machine-api
           labels:
             compute-model: smc
@@ -185,6 +191,7 @@ spec:
             mgmtIp: 172.18.63.15
             odfIp: 172.18.66.15
         - name: xf-16.rho.lab.signal9.gg
+          deployed: true
           namespace: openshift-machine-api
           labels:
             compute-model: smc
@@ -211,6 +218,7 @@ spec:
             mgmtIp: 172.18.63.16
             odfIp: 172.18.66.16
         - name: xf-17.rho.lab.signal9.gg
+          deployed: false
           namespace: test-infraenv
           labels:
             compute-model: smc
@@ -239,6 +247,7 @@ spec:
             mgmtIp: 172.18.63.17
             odfIp: 172.18.66.17
         - name: xf-18.rho.lab.signal9.gg
+          deployed: true
           namespace: openshift-machine-api
           labels:
             compute-model: r720
@@ -265,6 +274,7 @@ spec:
             mgmtIp: 172.18.63.18
             odfIp: 172.18.66.18
         - name: xf-19.rho.lab.signal9.gg
+          deployed: true
           namespace: openshift-machine-api
           labels:
             compute-model: r720
@@ -291,6 +301,7 @@ spec:
             mgmtIp: 172.18.63.19
             odfIp: 172.18.66.19
         - name: xf-20.rho.lab.signal9.gg
+          deployed: true
           namespace: openshift-machine-api
           labels:
             compute-model: r720
