@@ -1,6 +1,9 @@
 nodes:
   - name: xf-10.rho.lab.signal9.gg
+    deployed: true
     namespace: openshift-machine-api
+    annotations:
+      inspect.metal3.org: disabled
     labels:
       compute-model: sl230
     bootMac: 2c:41:38:eb:da:18
@@ -26,6 +29,7 @@ nodes:
       mgmtIp: 172.18.63.10
       odfIp: 172.18.66.10
   - name: xf-11.rho.lab.signal9.gg
+    deployed: true
     namespace: openshift-machine-api
     labels:
       compute-model: sl230
@@ -52,6 +56,7 @@ nodes:
       mgmtIp: 172.18.63.11
       odfIp: 172.18.66.11
   - name: xf-12.rho.lab.signal9.gg
+    deployed: true
     namespace: openshift-machine-api
     labels:
       compute-model: sl230

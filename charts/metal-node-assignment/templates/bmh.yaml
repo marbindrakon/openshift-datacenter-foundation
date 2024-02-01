@@ -8,6 +8,9 @@ metadata:
   namespace: {{ .namespace }}
   annotations:
     argocd.argoproj.io/sync-options: "ServerSideApply=True"
+    {{ if .annotations }}
+    {{ toYaml .annotations | nindent 4 }}
+    {{ end }}
   labels:
     {{ toYaml .labels | nindent 4 }}
 spec:
