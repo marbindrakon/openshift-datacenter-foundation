@@ -38,7 +38,7 @@ stringData:
             miimon: '100'
           port:
             {{ toYaml .network.bond1Interfaces | nindent 12 }}
-      - name: rho-ocp
+      - name: bond1.{{ .network.mgmtVlan }}
         type: vlan
         state: up
         mtu: 9000
@@ -51,7 +51,7 @@ stringData:
           address:
             - ip: {{ .network.mgmtIp }}
               prefix-length: 24
-      - name: odf
+      - name: bond1.{{ .netwrok.odfVlan }}
         type: vlan
         state: up
         mtu: 9000
