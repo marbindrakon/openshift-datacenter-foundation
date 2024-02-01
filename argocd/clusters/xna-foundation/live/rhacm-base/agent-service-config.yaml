@@ -24,3 +24,8 @@ spec:
     resources:
       requests:
         storage: 100Gi
+  osImages: 
+    - openshiftVersion: "4.14"
+      cpuArchitecture: x86_64
+      url: http://bastion.rho.lab.signal9.gg/rhcos-4.14.0-ec.2-x86_64-live.x86_64.iso
+      version: "414.92.202305090606-0"
