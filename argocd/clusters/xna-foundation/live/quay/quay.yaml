@@ -16,7 +16,7 @@ spec:
       kind: objectstorage
     - managed: true
       kind: redis
-    - managed: true
+    - managed: false
       kind: horizontalpodautoscaler
     - managed: false
       kind: route
