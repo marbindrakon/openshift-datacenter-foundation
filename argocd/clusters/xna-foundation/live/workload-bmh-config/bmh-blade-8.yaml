@@ -1,12 +1,13 @@
 apiVersion: metal3.io/v1alpha1
 kind: BareMetalHost
 metadata:
-  name: hp-blade-8
+  name: hp-blade-8.rho.lab.signal9.gg
   namespace: openshift-machine-api
   annotations:
     argocd.argoproj.io/sync-options: "ServerSideApply=True"
   labels:
     compute-type: sandy-bridge
+    compute-model: sl230
 spec:
   automatedCleaningMode: metadata
   online: false

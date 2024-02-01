@@ -1,7 +1,7 @@
 apiVersion: metal3.io/v1alpha1
 kind: BareMetalHost
 metadata:
-  name: smc-node-1
+  name: smc-node-1.rho.lab.signal9.gg
   namespace: openshift-machine-api
   annotations:
     argocd.argoproj.io/sync-options: "ServerSideApply=True"
