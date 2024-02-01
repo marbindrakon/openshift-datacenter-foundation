@@ -13,8 +13,8 @@ stringData:
         type: bond
         state: up
         ipv4:
-          enabled: true
-          dhcp: true
+          enabled: false
+          dhcp: false
         ipv6:
           enabled: false
         link-aggregation:
