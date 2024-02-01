@@ -218,10 +218,8 @@ spec:
             mgmtIp: 172.18.63.16
             odfIp: 172.18.66.16
         - name: xf-17.rho.lab.signal9.gg
-          deployed: true
+          deployed: false
           namespace: test-infraenv
-          annotations:
-            inspect.metal3.io: disabled
           labels:
             compute-model: smc
             infraenvs.agent-install.openshift.io: test-infraenv
