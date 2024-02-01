@@ -3,7 +3,9 @@ kind: OperatorGroup
 metadata:
   name: external-dns-operator
   namespace: external-dns-operator
-spec: {}
+spec:
+  targetNamespaces:
+    - external-dns-operator
 ---
 apiVersion: operators.coreos.com/v1alpha1
 kind: Subscription
