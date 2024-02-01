@@ -13,6 +13,10 @@ metadata:
   name: external-dns-operator
   namespace: external-dns-operator
 spec:
+  config:
+    env:
+      - name: TRUSTED_CA_CONFIGMAP_NAME
+        value: trusted-ca
   channel: stable-v1
   installPlanApproval: Automatic
   name: external-dns-operator
