@@ -211,9 +211,10 @@ spec:
             mgmtIp: 172.18.63.16
             odfIp: 172.18.66.16
         - name: xf-17.rho.lab.signal9.gg
-          namespace: openshift-machine-api
+          namespace: test-infraenv
           labels:
             compute-model: smc
+            infraenvs.agent-install.openshift.io: test-infraenv
           bootMac: 00:25:90:85:75:7c
           bmc:
             url: ipmi://bmc-smc-node-3.oob.signal9.gg
