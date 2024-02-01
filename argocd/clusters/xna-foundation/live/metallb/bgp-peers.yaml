@@ -7,7 +7,6 @@ metadata:
     argocd.argoproj.io/sync-options: SkipDryRunOnMissingResource=true
     argocd.argoproj.io/sync-wave: "2"
 spec:
-  bfdProfile: lab-bfd-profile
   peerAddress: 172.18.63.1
   peerASN: 65132
   myASN: 65133
