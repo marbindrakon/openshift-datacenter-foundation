@@ -7,6 +7,9 @@ metadata:
     argocd.argoproj.io/sync-options: ServerSideApply=true
     argocd.argoproj.io/sync-wave: '2'
 spec:
+  httpProxy: http://bastion.rho.lab.signal9.gg:3128
+  httpsProxy: http://bastion.rho.lab.signal9.gg:3128
+  noProxy: .signal9.gg,172.18.0.0/16,signal9.gg
   trustedCA:
     name: "base-config-ca-certs"
 {{- end -}}
