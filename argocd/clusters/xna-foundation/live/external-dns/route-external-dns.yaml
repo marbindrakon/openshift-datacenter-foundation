@@ -1,0 +1,28 @@
+apiVersion: externaldns.olm.openshift.io/v1beta1
+kind: ExternalDNS
+metadata:
+  name: route-infoblox
+  namespace: external-dns-operator
+  annotations:
+    argocd.argoproj.io/sync-options: SkipDryRunOnMissingResource=true
+    argocd.argoproj.io/sync-wave: "2"
+spec:
+  provider:
+    type: Infoblox
+    infoblox:
+      credentials:
+        name: infoblox-credentials
+      gridHost: 172.18.60.10
+      wapiPort: 443
+      wapiVersion: "2.3.1"
+  domains:
+  - filterType: Include
+    matchType: Exact
+    name: rho.lab.signal9.gg
+  source:
+    type: OpenShiftRoute
+    openshiftRouteOptions:
+      routerName: default
+    labelFilter:
+      matchLabels:
+        external-dns.signal9.gg/publish: "yes"
