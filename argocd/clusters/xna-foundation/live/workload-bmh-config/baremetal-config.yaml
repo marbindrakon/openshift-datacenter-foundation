@@ -22,7 +22,7 @@ spec:
         - /spec/image
   project: default
   source:
-    repoURL: 'https://gitea.apps.xna-foundation.rho.lab.signal9.gg/'
+    repoURL: 'https://gitea.apps.xna-foundation.rho.lab.signal9.gg/rho-lab/gitops.git'
     targetRevision: HEAD
     path: 'charts/metal-node-assignment'
     helm:
