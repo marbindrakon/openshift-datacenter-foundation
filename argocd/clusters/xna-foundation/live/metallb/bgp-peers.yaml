@@ -1,0 +1,15 @@
+apiVersion: metallb.io/v1beta2
+kind: BGPPeer
+metadata:
+  namespace: metallb-system
+  name: rho-rtr-peer
+  annotations:
+    argocd.argoproj.io/sync-options: SkipDryRunOnMissingResource=true
+    argocd.argoproj.io/sync-wave: "2"
+spec:
+  bfdProfile: lab-bfd-profile
+  peerAddress: 172.18.63.1
+  peerASN: 65132
+  myASN: 65133
+  peerPort: 179
+  routerID: 172.18.63.5
