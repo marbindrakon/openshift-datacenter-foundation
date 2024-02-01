@@ -240,7 +240,7 @@ spec:
           namespace: openshift-machine-api
           labels:
             compute-model: r720
-          bootMac: b8:ca:3a:62:95:a5
+          bootMac: b8:ca:3a:62:95:a4
           bmc:
             url: ipmi://r720-1-drac.oob.signal9.gg
             externalSecret:
@@ -266,7 +266,7 @@ spec:
           namespace: openshift-machine-api
           labels:
             compute-model: r720
-          bootMac: bc:30:5b:f1:d7:15
+          bootMac: bc:30:5b:f1:d7:14
           bmc:
             url: ipmi://r720-2-drac.oob.signal9.gg
             externalSecret:
@@ -292,7 +292,7 @@ spec:
           namespace: openshift-machine-api
           labels:
             compute-model: r720
-          bootMac: 18:66:da:ea:27:ef
+          bootMac: 18:66:da:ea:27:ee
           bmc:
             url: ipmi://r720-3-drac.oob.signal9.gg
             externalSecret:
