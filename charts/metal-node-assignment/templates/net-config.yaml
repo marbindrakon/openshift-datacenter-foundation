@@ -1,4 +1,5 @@
 {{- range .Values.nodes -}}
+{{- if .deployed | default false -}}
 ---
 apiVersion: v1 
 kind: Secret
@@ -79,4 +80,5 @@ stringData:
           next-hop-interface: bond1.{{ .network.odfVlan }}
           table-id: 254
 ---
+{{ end }}
 {{ end }}
