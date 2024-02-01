@@ -1,0 +1,21 @@
+nodes: []
+  #- name:
+  #  namespace:
+  #  labels:
+  #  bootMac:
+  #  bmc:
+  #   url:
+  #   externalSecret:
+  #     vaultName:
+  #     usernameKey:
+  #     passwordKey:
+  #  network:
+  #    dnsServers: []
+  #    bond0Interfaces: []
+  #    bond1Interfaces: []
+  #    mgmtGateway:
+  #    odfGateway:
+  #    mgmtVlan:
+  #    odfVlan:
+  #    mgmtIp:
+  #    odfIp

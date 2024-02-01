@@ -1,0 +1,23 @@
+{{- range .Values.nodes -}}
+---
+apiVersion: metal3.io/v1alpha1
+kind: BareMetalHost
+metadata:
+  name: {{ .name }}
+  namespace: {{ .namespace }}
+  annotations:
+    argocd.argoproj.io/sync-options: "ServerSideApply=True"
+  labels:
+    {{ toYaml .labels | nindent 4 }}
+spec:
+  automatedCleaningMode: metadata
+  online: false
+  bootMode: legacy
+  bootMACAddress: "{{ .bootMac }}"
+  preprovisioningNetworkDataName: {{ .name }}-net-config
+  bmc:
+    address: '{{ .bmc.url }}'
+    credentialsName: '{{ .name }}-creds'
+    disableCertificateVerification: true
+---
+{{ end }}
