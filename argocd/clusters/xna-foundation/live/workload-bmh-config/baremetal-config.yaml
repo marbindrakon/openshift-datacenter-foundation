@@ -177,7 +177,7 @@ spec:
               - eno2
             bond1Interfaces:
               - enp131s0f0
-              - enp131s0f0
+              - enp131s0f1
             mgmtGateway: 172.18.63.1
             odfGateway: 172.18.66.1
             mgmtVlan: 603
@@ -203,7 +203,7 @@ spec:
               - eno2
             bond1Interfaces:
               - enp131s0f0
-              - enp131s0f0
+              - enp131s0f1
             mgmtGateway: 172.18.63.1
             odfGateway: 172.18.66.1
             mgmtVlan: 603
@@ -229,7 +229,7 @@ spec:
               - eno2
             bond1Interfaces:
               - enp131s0f0
-              - enp131s0f0
+              - enp131s0f1
             mgmtGateway: 172.18.63.1
             odfGateway: 172.18.66.1
             mgmtVlan: 603
