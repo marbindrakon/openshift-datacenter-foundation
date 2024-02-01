@@ -51,7 +51,7 @@ stringData:
           address:
             - ip: {{ .network.mgmtIp }}
               prefix-length: 24
-      - name: bond1.{{ .netwrok.odfVlan }}
+      - name: bond1.{{ .network.odfVlan }}
         type: vlan
         state: up
         mtu: 9000
