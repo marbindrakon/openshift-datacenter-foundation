@@ -35,7 +35,7 @@ spec:
             tag: "1.15.2-ubi"
 
           readinessProbe:
-            path: "/v1/sys/health?uninitcode=204"
+            path: "/v1/sys/health?standbyok=true&sealedcode=204&uninitcode=204"
 
           podDisruptionBudget:
             maxUnavailable: 2
