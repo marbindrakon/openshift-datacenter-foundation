@@ -236,3 +236,82 @@ spec:
             odfVlan: 606
             mgmtIp: 172.18.63.17
             odfIp: 172.18.66.17
+        - name: xf-18.rho.lab.signal9.gg
+          namespace: openshift-machine-api
+          labels:
+            compute-model: r720
+          bootMac: b8:ca:3a:62:95:a4
+          bmc:
+            url: ipmi://r720-1-drac.oob.signal9.gg
+            externalSecret:
+              vaultName: openshift-signal9-ldap
+              usernameKey: username
+              passwordKey: ipmi_password
+          network:
+            dnsServers:
+              - 172.18.60.10
+            bond0Interfaces:
+              - eno3
+              - eno4
+            bond1Interfaces:
+              - enp65s0
+              - enp65s0d1
+            mgmtGateway: 172.18.63.1
+            odfGateway: 172.18.66.1
+            mgmtVlan: 603
+            odfVlan: 606
+            mgmtIp: 172.18.63.18
+            odfIp: 172.18.66.18
+        - name: xf-19.rho.lab.signal9.gg
+          namespace: openshift-machine-api
+          labels:
+            compute-model: r720
+          bootMac: bc:30:5b:f1:d7:14
+          bmc:
+            url: ipmi://r720-2-drac.oob.signal9.gg
+            externalSecret:
+              vaultName: openshift-signal9-ldap
+              usernameKey: username
+              passwordKey: ipmi_password
+          network:
+            dnsServers:
+              - 172.18.60.10
+            bond0Interfaces:
+              - eno3
+              - eno4
+            bond1Interfaces:
+              - enp65s0
+              - enp65s0d1
+            mgmtGateway: 172.18.63.1
+            odfGateway: 172.18.66.1
+            mgmtVlan: 603
+            odfVlan: 606
+            mgmtIp: 172.18.63.19
+            odfIp: 172.18.66.19
+        - name: xf-20.rho.lab.signal9.gg
+          namespace: openshift-machine-api
+          labels:
+            compute-model: r720
+          bootMac: 18:66:da:ea:27:ee
+          bmc:
+            url: ipmi://r720-3-drac.oob.signal9.gg
+            externalSecret:
+              vaultName: openshift-signal9-ldap
+              usernameKey: username
+              passwordKey: ipmi_password
+          network:
+            dnsServers:
+              - 172.18.60.10
+            bond0Interfaces:
+              - eno3
+              - eno4
+            bond1Interfaces:
+              - enp65s0
+              - enp65s0d1
+            mgmtGateway: 172.18.63.1
+            odfGateway: 172.18.66.1
+            mgmtVlan: 603
+            odfVlan: 606
+            mgmtIp: 172.18.63.20
+            odfIp: 172.18.66.20
+
