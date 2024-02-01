@@ -72,11 +72,11 @@ stringData:
       config:
         - destination: 0.0.0.0/0
           next-hop-address: {{ .network.mgmtGateway }}
-          next-hop-interface: rho-ocp
+          next-hop-interface: bond1.{{ .network.mgmtVlan }}
           table-id: 254
         - destination: 172.18.14.0/24
           next-hop-address: {{ .network.odfGateway }}
-          next-hop-interface: odf
+          next-hop-interface: bond1.{{ .network.odfVlan }}
           table-id: 254
 ---
 {{ end }}
