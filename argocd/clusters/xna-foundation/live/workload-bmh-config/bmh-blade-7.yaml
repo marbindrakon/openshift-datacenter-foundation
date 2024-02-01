@@ -17,6 +17,3 @@ spec:
     address: 'ipmi://ilo-hp-blade-7.oob.signal9.gg'
     credentialsName: 'ilo-hp-blade-7'
     disableCertificateVerification: true
-  networkData:
-    name: sl230-post-net-config
-    namespace: openshift-machine-api

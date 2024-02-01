@@ -11,8 +11,8 @@ stringData:
        type: bond
        state: up
        ipv4:
-         enabled: false
-         dhcp: false
+         enabled: true
+         dhcp: true
        ipv6:
          enabled: false
        link-aggregation:
@@ -44,6 +44,16 @@ stringData:
        mtu: 9000
        vlan:
          id: 603
+         base-iface: bond1
+       ipv4:
+         enabled: true
+         dhcp: true
+     - name: odf
+       type: vlan
+       state: up
+       mtu: 9000
+       vlan:
+         id: 606
          base-iface: bond1
        ipv4:
          enabled: true

@@ -18,6 +18,3 @@ spec:
     address: 'ipmi://bmc-smc-node-2.oob.signal9.gg'
     credentialsName: 'smc-node-2'
     disableCertificateVerification: true
-  networkData:
-    name: smc-post-net-config
-    namespace: openshift-machine-api
