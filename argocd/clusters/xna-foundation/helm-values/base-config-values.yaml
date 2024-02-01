@@ -75,8 +75,8 @@ certManager:
           - rho.lab.signal9.gg
 
 monitoring:
-  enabled: false
-  storageClass: standard
+  enabled: true
+  storageClass: ocs-external-storagecluster-ceph-rbd
 
 network:
   hostRouting: true
