@@ -6,11 +6,11 @@ resources:
   - mch.yaml
   - mco-namespace.yaml
   - mco-pull-secret.yaml
-  - mco-obc.yaml
+  #- mco-obc.yaml
   - agent-service-config.yaml
   - hive-ca-bundle.yaml
   - hive-config.yaml
   - hypershift-config.yaml
   # These must be re-enabled after adding the s3 bucket credentials to vault
-  - thanos-secret.yaml
-  - mco.yaml
+  #- thanos-secret.yaml
+  #- mco.yaml

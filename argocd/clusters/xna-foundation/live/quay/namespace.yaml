@@ -1,6 +1,0 @@
-apiVersion: v1
-kind: Namespace
-metadata:
-  name: quay
-  annotations:
-    openshift.io/node-selector: "node-role.kubernetes.io/infra="
