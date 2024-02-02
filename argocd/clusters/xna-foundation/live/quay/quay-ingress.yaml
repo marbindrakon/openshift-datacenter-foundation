@@ -1,0 +1,25 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: quay-app
+  namespace: quay
+  annotations:
+    route.openshift.io/termination: "reencrypt"
+    route.openshift.io/destination-ca-certificate-secret: signal9-ca
+spec:
+  ingressClassName: openshift-default
+  tls:
+  - hosts:
+      - quay.rho.lab.signal9.gg
+    secretName: quay-cert
+  rules:
+  - host: quay.rho.lab.signal9.gg
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: signal9-quay-app
+            port:
+              name: https
