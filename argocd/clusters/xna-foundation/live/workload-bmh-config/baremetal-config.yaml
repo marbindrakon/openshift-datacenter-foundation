@@ -218,7 +218,7 @@ spec:
             mgmtIp: 172.18.63.16
             odfIp: 172.18.66.16
         - name: xf-17.rho.lab.signal9.gg
-          deployed: true
+          deployed: false
           namespace: test-infraenv
           labels:
             compute-model: smc
