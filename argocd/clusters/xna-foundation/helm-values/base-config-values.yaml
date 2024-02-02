@@ -134,6 +134,12 @@ disconnectedSources:
       - bastion.rho.lab.signal9.gg:8443/mirror/advanced-cluster-security
       source: registry.redhat.io/advanced-cluster-security
     - mirrors:
+      - bastion.rho.lab.signal9.gg:8443/mirror/ansible-automation-platform
+      source: registry.redhat.io/ansible-automation-platform
+    - mirrors:
+      - bastion.rho.lab.signal9.gg:8443/mirror/ansible-automation-platform-24
+      source: registry.redhat.io/ansible-automation-platform-24
+    - mirrors:
       - bastion.rho.lab.signal9.gg:8443/mirror/odf4
       source: registry.redhat.io/odf4
     - mirrors:
