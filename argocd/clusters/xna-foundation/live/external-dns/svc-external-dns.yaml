@@ -25,8 +25,5 @@ spec:
         - LoadBalancer
     hostnameAnnotation: "Allow" 
     fqdnTemplate:
-    - "{{.Name}}.svc.rho.lab.signal9.gg" 
+    - "{{.Name}}-svc.rho.lab.signal9.gg" 
     type: Service
-    labelFilter:
-      matchLabels:
-        external-dns.signal9.gg/publish: "yes"
