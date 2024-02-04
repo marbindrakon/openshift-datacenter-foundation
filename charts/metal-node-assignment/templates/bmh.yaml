@@ -19,7 +19,7 @@ metadata:
     {{ end }}
   labels:
     {{- if eq .assignmentType "agent" }}
-    infraenvs.agent-install.openshift.io: {{ .infaEnvName }}
+    infraenvs.agent-install.openshift.io: {{ .infraEnvName }}
     {{ end }}
     {{- toYaml $nodeConfig.labels | nindent 4 }}
     {{- if .extraLabels }}
