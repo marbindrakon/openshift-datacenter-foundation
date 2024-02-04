@@ -60,9 +60,25 @@ data:
 
     [[registry]]
     prefix = ""
+    location = "quay.io/openshift-release-dev"
+    mirror-by-digest-only = true
+
+    [[registry.mirror]]
+    location = "bastion.rho.lab.signal9.gg:8443/mirror/openshift/release"
+
+    [[registry]]
+    prefix = ""
     location = "registry.redhat.io/rhacm2"
     mirror-by-digest-only = true
 
     [[registry.mirror]]
     location = "bastion.rho.lab.signal9.gg:8443/mirror/rhacm2"
+
+    [[registry]]
+    prefix = ""
+    location = "registry.redhat.io/multicluster-engine"
+    mirror-by-digest-only = true
+
+    [[registry.mirror]]
+    location = "bastion.rho.lab.signal9.gg:8443/mirror/multicluster-engine"
 
