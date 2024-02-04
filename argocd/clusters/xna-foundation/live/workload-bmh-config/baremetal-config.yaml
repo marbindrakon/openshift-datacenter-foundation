@@ -27,5 +27,5 @@ spec:
     path: 'charts/metal-node-assignment'
     helm:
       valueFiles:
-        - values/nodes.yaml
-        - values/assignments.yaml
+        - ../../argocd/clusters/xna-foundation/live/workload-bmh-config/values/nodes.yaml
+        - ../../argocd/clusters/xna-foundation/live/workload-bmh-config/values/assignments.yaml
