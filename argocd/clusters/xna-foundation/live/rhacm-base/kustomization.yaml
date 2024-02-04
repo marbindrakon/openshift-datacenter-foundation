@@ -11,6 +11,7 @@ resources:
   - hive-ca-bundle.yaml
   - hive-config.yaml
   - hypershift-config.yaml
+  - hypershift-registries.yaml
   # These must be re-enabled after adding the s3 bucket credentials to vault
   #- thanos-secret.yaml
   #- mco.yaml
