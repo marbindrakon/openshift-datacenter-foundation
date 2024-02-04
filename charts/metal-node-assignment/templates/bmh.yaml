@@ -30,14 +30,14 @@ spec:
   bootMode: legacy
   bootMACAddress: "{{ $nodeConfig.bootMac }}"
   {{- if eq .assignmentType "metal3" }}
-  preprovisioningNetworkDataName: {{ .name }}-net-config
+  preprovisioningNetworkDataName: {{ .node }}-net-config
   online: false
   {{ else }}
   online: true
   {{ end }}
   bmc:
     address: '{{ $nodeConfig.bmc.url }}'
-    credentialsName: '{{ $nodeConfig.name }}-creds'
+    credentialsName: '{{ .node }}-creds'
     disableCertificateVerification: true
 ---
 {{ end }}
