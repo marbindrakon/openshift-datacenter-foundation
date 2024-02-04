@@ -754,9 +754,9 @@ nodes:
         - name: eno2
           macAddress: 00:25:90:85:75:7d
         - name: enp131s0f0
-          macAddress: 90:e2:ba:91:1c:30
+          macAddress: 90:e2:ba:91:4d:cc
         - name: enp131s0f1
-          macAddress: 90:e2:ba:91:1c:31
+          macAddress: 90:e2:ba:91:4d:cd
   xf-18.rho.lab.signal9.gg:
     labels:
       compute-model: r720
