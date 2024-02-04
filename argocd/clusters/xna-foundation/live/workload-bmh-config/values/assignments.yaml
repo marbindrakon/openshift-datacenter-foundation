@@ -1,7 +1,8 @@
 assignments:
   - node: xf-10.rho.lab.signal9.gg
-    namespace: openshift-machine-api
-    assignmentType: metal3
+    namespace: test-infraenv
+    assignmentType: agent
+    infraEnvName: test-infraenv
     extraLabels: {}
     extraAnnotations: {}
   - node: xf-11.rho.lab.signal9.gg
