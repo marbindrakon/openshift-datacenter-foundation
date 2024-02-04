@@ -1,0 +1,56 @@
+assignments:
+  - node: xf-10.rho.lab.signal9.gg
+    namespace: openshift-machine-api
+    assignmentType: metal3
+    extraLabels: {}
+    extraAnnotations: {}
+  - node: xf-11.rho.lab.signal9.gg
+    namespace: openshift-machine-api
+    assignmentType: metal3
+    extraLabels: {}
+    extraAnnotations: {}
+  - node: xf-12.rho.lab.signal9.gg
+    namespace: openshift-machine-api
+    assignmentType: metal3
+    extraLabels: {}
+    extraAnnotations: {}
+  - node: xf-13.rho.lab.signal9.gg
+    namespace: openshift-machine-api
+    assignmentType: metal3
+    extraLabels: {}
+    extraAnnotations: {}
+  - node: xf-14.rho.lab.signal9.gg
+    namespace: openshift-machine-api
+    assignmentType: metal3
+    extraLabels: {}
+    extraAnnotations: {}
+  - node: xf-15.rho.lab.signal9.gg
+    namespace: openshift-machine-api
+    assignmentType: metal3
+    extraLabels: {}
+    extraAnnotations: {}
+  - node: xf-16.rho.lab.signal9.gg
+    namespace: openshift-machine-api
+    assignmentType: metal3
+    extraLabels: {}
+    extraAnnotations: {}
+# - node: xf-17.rho.lab.signal9.gg
+#   namespace: openshift-machine-api
+#   assignmentType: metal3
+#   extraLabels: {}
+#   extraAnnotations: {}
+  - node: xf-18.rho.lab.signal9.gg
+    namespace: openshift-machine-api
+    assignmentType: metal3
+    extraLabels: {}
+    extraAnnotations: {}
+  - node: xf-19.rho.lab.signal9.gg
+    namespace: openshift-machine-api
+    assignmentType: metal3
+    extraLabels: {}
+    extraAnnotations: {}
+  - node: xf-20.rho.lab.signal9.gg
+    namespace: openshift-machine-api
+    assignmentType: metal3
+    extraLabels: {}
+    extraAnnotations: {}

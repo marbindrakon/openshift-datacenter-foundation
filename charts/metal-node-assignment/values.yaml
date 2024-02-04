@@ -1,7 +1,15 @@
+assignments: []
+  #- node: <node name from node list>
+  #  namespace: <destination namespace>
+  #  assignmentType: metal3 / agent
+  #  extraLabels: {}
+  #  extraAnnotations: {}
+  #  infraEnvName: <infraenv name, only used if type is agent>
+
 nodes: []
-  #- name:
-  #  namespace:
+  #<name>:
   #  labels:
+  #  annotations:
   #  bootMac:
   #  bmc:
   #   url:
@@ -10,12 +18,5 @@ nodes: []
   #     usernameKey:
   #     passwordKey:
   #  network:
-  #    dnsServers: []
-  #    bond0Interfaces: []
-  #    bond1Interfaces: []
-  #    mgmtGateway:
-  #    odfGateway:
-  #    mgmtVlan:
-  #    odfVlan:
-  #    mgmtIp:
-  #    odfIp
+  #    nmstateConfig:
+  #    interfaceMap:

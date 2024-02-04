@@ -1,28 +1,43 @@
-{{- range .Values.nodes -}}
-{{- if .deployed | default false -}}
+{{- range .Values.assignments -}}
+{{- $nodeConfig := get $.Values.nodes .node -}}
 ---
 apiVersion: metal3.io/v1alpha1
 kind: BareMetalHost
 metadata:
-  name: {{ .name }}
+  name: {{ .node }}
   namespace: {{ .namespace }}
   annotations:
     argocd.argoproj.io/sync-options: "ServerSideApply=True"
-    {{ if .annotations }}
-    {{ toYaml .annotations | nindent 4 }}
+    {{- if eq .assignmentType "agent" }}
+    inspect.metal3.io: disabled
+    {{ end }}
+    {{- if $nodeConfig.annotations }}
+    {{ toYaml $nodeConfig.annotations | nindent 4 }}
+    {{ end }}
+    {{- if .extraAnnotations }}
+    {{ toYaml .extraAnnotations | nindent 4 }}
     {{ end }}
   labels:
-    {{ toYaml .labels | nindent 4 }}
+    {{- if eq .assignmentType "agent" }}
+    infraenvs.agent-install.openshift.io: {{ .infaEnvName }}
+    {{ end }}
+    {{- toYaml $nodeConfig.labels | nindent 4 }}
+    {{- if .extraLabels }}
+    {{ toYaml .extraLabels | nindent 4 }}
+    {{ end }}
 spec:
   automatedCleaningMode: metadata
-  online: false
   bootMode: legacy
-  bootMACAddress: "{{ .bootMac }}"
+  bootMACAddress: "{{ $nodeConfig.bootMac }}"
+  {{- if eq .assignmentType "metal3" }}
   preprovisioningNetworkDataName: {{ .name }}-net-config
+  online: false
+  {{ else }}
+  online: true
+  {{ end }}
   bmc:
-    address: '{{ .bmc.url }}'
-    credentialsName: '{{ .name }}-creds'
+    address: '{{ $nodeConfig.bmc.url }}'
+    credentialsName: '{{ $nodeConfig.name }}-creds'
     disableCertificateVerification: true
 ---
-{{ end }}
 {{ end }}
