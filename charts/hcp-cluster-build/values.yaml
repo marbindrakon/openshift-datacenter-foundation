@@ -12,7 +12,7 @@ cluster:
   importToACM: true
   etcdSize: 8Gi
   pullSecretVault: "ocp-pull-secret"
-  trustedCAs: null
+  trustBundleConfigMap: user-ca-bundle
   sshPubKey: ""
   kubevirt:
     # If true, use a subdomain of the foundation cluster's ingress for workload ingress
