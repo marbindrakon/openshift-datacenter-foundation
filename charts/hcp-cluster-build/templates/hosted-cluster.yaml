@@ -9,6 +9,10 @@ metadata:
 {{ end }}
 spec:
   autoscaling: {}
+{{- if .Values.trustedCAs }}
+  additionalTrustBundle:
+    name: {{ .Values.cluster.name }}-ca-bundle
+{{ end }}
   controllerAvailabilityPolicy: HighlyAvailable
   dns:
     baseDomain: {{ .Values.cluster.baseDomain }}
