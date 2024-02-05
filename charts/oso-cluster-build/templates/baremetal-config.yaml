@@ -25,8 +25,8 @@ spec:
   baremetalSetTemplate:
     bmhLabelSelector:
       app: openstack
-      compute-model: sl230
-    ctlplaneInterface: eno1
+      compute-model: r720
+    ctlplaneInterface: eno3
     cloudUserName: cloud-admin
     provisionServerName: {{ .Values.cloudName }}-provision
     passwordSecret:
