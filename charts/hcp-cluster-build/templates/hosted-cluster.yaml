@@ -9,7 +9,7 @@ metadata:
 {{ end }}
 spec:
   autoscaling: {}
-{{- if .Values.trustedCAs }}
+{{- if .Values.cluster.trustedCAs }}
   additionalTrustBundle:
     name: {{ .Values.cluster.name }}-ca-bundle
 {{ end }}
