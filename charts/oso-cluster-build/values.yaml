@@ -1,0 +1,34 @@
+cloudName: oso
+baseDomain: rho.lab.signal9.gg
+foundationIngressBase: apps.xna-foundation.rho.lab.signal9.gg
+
+externalPasswordsSecret: "oso-passwords"
+
+ceph:
+  fsid: 14e37f3d-9026-46c3-a503-82fa0acbac3f
+  externalConfigSecret: "oso-ceph-config"
+  client: osp2
+  pools:
+    glance: osp2-images
+    nova: osp2-vms
+    cinder: osp2-volumes
+    cinderBackup: osp2-backups
+
+loadbalancerIPs:
+  ctlplane: 172.18.62.251
+  internalapiGeneric: 172.18.64.82
+  internalapiRabbit: 172.18.64.85
+  internalapiRabbitCell1: 172.18.64.86
+
+metallbInterfaces:
+  internalapi:
+    - osp-int-api
+  ctlplane:
+    - provisioning
+
+metallbRanges:
+  internalapi: 
+    - 172.18.64.80-172.18.64.90
+  ctlplane:
+    - 172.18.62.250-172.18.62.254
+
