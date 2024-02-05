@@ -449,8 +449,8 @@ spec:
               endpointURL: "https://{{ .Values.cloudName }}-ironic-api.{{ .Values.foundationIngressBase }}"
         replicas: 2
       ironicConductors:
-      - replicas: 2
-        storageClass: "ocs-external-storagecluster-cephfs"
+      - replicas: 1
+        storageClass: "ocs-external-storagecluster-ceph-rbd"
         storageRequest: 150G
       ironicInspector:
         override:
