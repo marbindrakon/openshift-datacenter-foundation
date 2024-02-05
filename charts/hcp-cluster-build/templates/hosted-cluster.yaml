@@ -1,0 +1,89 @@
+apiVersion: hypershift.openshift.io/v1beta1
+kind: HostedCluster
+metadata:
+  name: {{ .Values.cluster.name }}
+  namespace: {{ .Values.cluster.hcpNamespace }}
+spec:
+  autoscaling: {}
+  controllerAvailabilityPolicy: HighlyAvailable
+  dns:
+    baseDomain: {{ .Values.cluster.baseDomain }}
+  configuration:
+    {{- if .Values.certManager.manageApiCert }}
+    apiServer:
+      audit:
+        profile: Default
+      servingCerts:
+        namedCertificates:
+        - names:
+          - api.{{ .Values.cluster.name }}.{{ .Values.cluster.baseDomain }}
+          servingCertificate:
+            name: {{ .Values.cluster.name }}-api-crt
+    {{ end }}
+    oauth:
+      identityProviders:
+        - mappingMethod: claim
+          name: RHO
+          openID:
+            claims:
+              email:
+              - email
+              groups:
+              - groups
+              name:
+              - name
+              preferredUsername:
+              - preferred_username
+              - email
+            clientID: hcp-hosted-clusters
+            clientSecret:
+              name: hcp-oauth-client-secret
+            extraScopes:
+            - profile
+            issuer: https://sso.rho.lab.signal9.gg/realms/RHO
+          type: OpenID
+  etcd:
+    managed:
+      storage:
+        persistentVolume:
+          size: {{ .Values.cluster.etcdSize }}
+        type: PersistentVolume
+    managementType: Managed
+  fips: false
+  networking:
+    clusterNetwork:
+    - cidr: 10.132.0.0/14
+    networkType: OVNKubernetes
+    serviceNetwork:
+    - cidr: 172.31.0.0/16
+  platform:
+    agent:
+      agentNamespace: {{ .Values.cluster.agent.agentNamespaceOverride | default (print "clusters-" .Values.cluster.name) }}
+    type: Agent
+  pullSecret:
+    name: {{ .Values.cluster.name }}-pull-secret
+  release:
+    image: bastion.rho.lab.signal9.gg:8443/mirror/openshift/release-images:4.14.9-x86_64
+  services:
+  - service: APIServer
+    servicePublishingStrategy:
+      loadBalancer:
+        hostname: api.{{ .Values.cluster.name }}.{{ .Values.cluster.baseDomain }}
+      type: LoadBalancer
+  - service: OAuthServer
+    servicePublishingStrategy:
+      type: Route
+  - service: OIDC
+    servicePublishingStrategy:
+      type: Route
+  - service: Konnectivity
+    servicePublishingStrategy:
+      type: Route
+  - service: Ignition
+    servicePublishingStrategy:
+      type: Route
+  - service: OVNSbDb
+    servicePublishingStrategy:
+      type: Route
+  sshKey:
+    name: {{ .Values.cluster.name }}-ssh-key

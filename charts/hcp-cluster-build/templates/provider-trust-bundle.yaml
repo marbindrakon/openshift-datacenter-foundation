@@ -1,0 +1,12 @@
+{{- if .Values.cluster.trustedCAs -}}
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ .Values.cluster.name }}-ca-bundle
+  namespace: {{ .Values.cluster.hcpNamespace }}
+  annotations:
+    argocd.argoproj.io/sync-wave: '-1'
+data:
+  ca-bundle.crt: |
+    {{- .Values.cluster.trustedCAs | nindent 4 }}
+{{ end }}
