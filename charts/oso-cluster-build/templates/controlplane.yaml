@@ -8,6 +8,8 @@ metadata:
     argocd.argoproj.io/sync-wave: "3"
 spec:
   secret: {{ .Values.cloudName }}-password-secret
+  tls:
+    caBundleSecretName: {{ .Values.cloudName }}-ca-secret
   storageClass: ocs-external-storagecluster-ceph-rbd
   extraMounts:
     - name: v1
@@ -47,6 +49,9 @@ spec:
       replicas: 2
   cinder:
     apiOverride:
+      tls:
+        secretName: {{ .Values.cloudName }}-public-cert
+
       route:
         spec:
           host: {{ .Values.cloudName }}-cinder.{{ .Values.foundationIngressBase }}
@@ -99,6 +104,8 @@ spec:
           replicas: 1 # backend needs to be configured
   glance:
     apiOverride:
+      tls:
+        secretName: {{ .Values.cloudName }}-public-cert
       route:
         spec:
           host: {{ .Values.cloudName }}-glance.{{ .Values.foundationIngressBase }}
@@ -140,6 +147,9 @@ spec:
         - storage
   keystone:
     apiOverride:
+      tls:
+        secretName: {{ .Values.cloudName }}-public-cert
+
       route:
         spec:
           host: {{ .Values.cloudName }}-keystone.{{ .Values.foundationIngressBase }}
@@ -187,6 +197,9 @@ spec:
         replicas: 3
   neutron:
     apiOverride:
+      tls:
+        secretName: {{ .Values.cloudName }}-public-cert
+
       route:
         spec:
           host: {{ .Values.cloudName }}-neutron.{{ .Values.foundationIngressBase }}
@@ -213,6 +226,9 @@ spec:
   horizon:
     enabled: true
     apiOverride:
+      tls:
+        secretName: {{ .Values.cloudName }}-public-cert
+
       route:
         spec:
           host: {{ .Values.cloudName }}.{{ .Values.foundationIngressBase }}
@@ -225,6 +241,9 @@ spec:
       secret: {{ .Values.cloudName }}-password-secret
   nova:
     apiOverride:
+      tls:
+        secretName: {{ .Values.cloudName }}-public-cert
+
       route:
         spec:
           host: {{ .Values.cloudName }}-nova.{{ .Values.foundationIngressBase }}
@@ -259,6 +278,9 @@ spec:
       secret: {{ .Values.cloudName }}-password-secret
   manila:
     apiOverride:
+      tls:
+        secretName: {{ .Values.cloudName }}-public-cert
+
       route:
         spec:
           host: {{ .Values.cloudName }}-manila.{{ .Values.foundationIngressBase }}
@@ -327,6 +349,9 @@ spec:
         networkAttachment: tunnel
   placement:
     apiOverride:
+      tls:
+        secretName: {{ .Values.cloudName }}-public-cert
+
       route:
         spec:
           host: {{ .Values.cloudName }}-nova-placement.{{ .Values.foundationIngressBase }}
@@ -374,6 +399,9 @@ spec:
               type: LoadBalancer
   heat:
     apiOverride:
+      tls:
+        secretName: {{ .Values.cloudName }}-public-cert
+
       route:
         spec:
           host: {{ .Values.cloudName }}-heat.{{ .Values.foundationIngressBase }}
@@ -427,6 +455,9 @@ spec:
   ironic:
     enabled: true
     apiOverride:
+      tls:
+        secretName: {{ .Values.cloudName }}-public-cert
+
       route:
         spec:
           host: {{ .Values.cloudName }}-ironic-api.{{ .Values.foundationIngressBase }}
@@ -473,6 +504,9 @@ spec:
   octavia:
     enabled: true
     apiOverride:
+      tls:
+        secretName: {{ .Values.cloudName }}-public-cert
+
       route:
         spec:
           host: {{ .Values.cloudName }}-octavia.{{ .Values.foundationIngressBase }}
