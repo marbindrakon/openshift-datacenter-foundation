@@ -24,6 +24,5 @@ spec:
     openshiftRouteOptions:
       routerName: default
     labelFilter:
-      matchExpressions:
-        - key: hypershift.openshift.io/infra-id
-          operator: Exists
+      matchLabels:
+        external-dns.signal9.gg/publish: "yes"
