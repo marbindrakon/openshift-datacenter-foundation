@@ -215,6 +215,9 @@ disconnectedSources:
     - mirrors:
       - bastion.rho.lab.signal9.gg:8443/mirror/hashicorp
       source: registry.connect.redhat.com/hashicorp
+    - mirrors:
+      - bastion.rho.lab.signal9.gg:8443/mirror/rhel8
+      source: registry.redhat.io/rhel8
 
   catalogSources:
     - name: redhat-operators
