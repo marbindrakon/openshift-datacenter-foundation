@@ -65,9 +65,17 @@ spec:
     serviceNetwork:
     - cidr: 172.31.0.0/16
   platform:
+{{ if eq .Values.cluster.type "agent" }}
     agent:
       agentNamespace: {{ .Values.cluster.agent.agentNamespaceOverride | default (print "clusters-" .Values.cluster.name) }}
     type: Agent
+{{ end }}
+{{ if eq .Values.cluster.type "kubevirt" }}
+  platform:
+    kubevirt:
+      baseDomainPassthrough: {{ .Values.cluster.kubevirt.baseDomainPassthrough }}
+    type: KubeVirt
+{{ end }}
   pullSecret:
     name: {{ .Values.cluster.name }}-pull-secret
   release:
