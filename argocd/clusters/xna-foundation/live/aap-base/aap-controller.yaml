@@ -18,7 +18,7 @@ spec:
   projects_storage_size: 12Gi
   task_privileged: false
   projects_storage_access_mode: ReadWriteOnce
-  projects_persistence: true
+  projects_persistence: false
   projects_use_existing_claim: _No_
   projects_storage_class: ocs-external-storagecluster-ceph-rbd
   replicas: 1
