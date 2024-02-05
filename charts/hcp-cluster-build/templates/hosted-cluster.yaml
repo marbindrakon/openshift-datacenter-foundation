@@ -3,6 +3,10 @@ kind: HostedCluster
 metadata:
   name: {{ .Values.cluster.name }}
   namespace: {{ .Values.cluster.hcpNamespace }}
+{{- if .Values.cluster.controlPlaneOperatorImageOverride }}
+  annotations:
+    hypershift.openshift.io/control-plane-operator-image: {{ .Values.cluster.controlPlaneOperatorImageOverride }}
+{{ end }}
 spec:
   autoscaling: {}
   controllerAvailabilityPolicy: HighlyAvailable
