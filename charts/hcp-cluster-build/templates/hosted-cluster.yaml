@@ -15,7 +15,11 @@ spec:
 {{ end }}
   controllerAvailabilityPolicy: HighlyAvailable
   dns:
+{{- if and (eq .Values.cluster.type "kubevirt") (.Values.cluster.kubevirt.baseDomainPassthrough) }}
+    baseDomain: ""
+{{ else }}
     baseDomain: {{ .Values.cluster.baseDomain }}
+{{ end }}
   configuration:
     {{- if .Values.certManager.manageApiCert }}
     apiServer:
