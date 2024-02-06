@@ -49,9 +49,9 @@ spec:
               preferredUsername:
               - preferred_username
               - email
-            clientID: hcp-hosted-clusters
+            clientID: {{ .Values.cluster.name }}-openshift
             clientSecret:
-              name: hcp-oauth-client-secret
+              name: {{ .Values.cluster.name }}-oauth-client-secret
             extraScopes:
             - profile
             issuer: https://sso.rho.lab.signal9.gg/realms/RHO
