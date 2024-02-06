@@ -3,6 +3,10 @@
   vars:
     cluster_state: present
   tasks:
+    - name: set ingress_base_domain
+      ansible.builtin.set_face:
+        ingress_base_domain: "{{ platform_configs[cluster_platform].ingress_base_domain }}"
+
     - name: include resource_allocation role
       ansible.builtin.include_role:
         name: resource_allocation
