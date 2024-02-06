@@ -37,7 +37,7 @@
 
 - name: determine ingress vip
   ansible.builtin.set_fact:
-    ingress_vip: "{{ metallb_network.network | ansible.utils.ipaddr('net') | ansible.utils.ipaddr('5') }}"
+    ingress_vip: "{{ metallb_network.network | ansible.utils.ipaddr('net') | ansible.utils.ipaddr('5') | ansible.utils.ipaddr('address') }}"
 
 - name: get third octet for ASN generation
   ansible.builtin.set_fact:
