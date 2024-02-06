@@ -5,12 +5,10 @@ metadata:
   namespace: openshift-gitops
 spec:
   generators:
-  - clusterDecisionResource:
-      configMapRef: spoke-gitops-generator
-      labelSelector:
-        matchLabels:
-          spoke-gitops: 'true'
-      requeueAfterSeconds: 30
+    - clusters:
+        selector:
+          matchLabels:
+            spoke-gitops: 'true'
   template:
     metadata:
       name: '{{ name }}-base-config'
