@@ -1,0 +1,24 @@
+# expected to be kubevirt or agent
+platform: agent
+
+cluster:
+  name: test-agent2
+  baseDomain: rho.lab.signal9.gg
+  foundationIngressBaseDomain: apps.xna-foundation.rho.lab.signal9.gg
+
+rbac:
+  globalAdminGroups:
+    - global-admins
+
+ingress:
+  managed: true
+agent:
+  installMetalLB: true
+  localAsn: 64720
+  peers:
+    - name: rho-rtr
+      address: 172.18.63.1
+      asn: 65132
+  clusterIpPool: "172.18.72.0/25"
+  anycastIpPool: "172.18.71.0/24"
+  ingressVip: 172.18.72.5
