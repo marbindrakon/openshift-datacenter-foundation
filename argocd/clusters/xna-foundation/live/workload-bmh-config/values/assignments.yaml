@@ -34,13 +34,15 @@ assignments:
 #   extraLabels: {}
 #   extraAnnotations: {}
   - node: xf-14.rho.lab.signal9.gg
-    namespace: openshift-machine-api
-    assignmentType: metal3
+    namespace: clusters-test-agent-rho
+    assignmentType: agent
+    infraEnvName: clusters-test-agent-rho
     extraLabels: {}
     extraAnnotations: {}
   - node: xf-15.rho.lab.signal9.gg
-    namespace: openshift-machine-api
-    assignmentType: metal3
+    namespace: clusters-test-agent-rho
+    assignmentType: agent
+    infraEnvName: clusters-test-agent-rho
     extraLabels: {}
     extraAnnotations: {}
   - node: xf-16.rho.lab.signal9.gg
