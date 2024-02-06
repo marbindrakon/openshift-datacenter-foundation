@@ -3,7 +3,7 @@
 # DNS domain where all managed OCP clusters will be created
 base_domain: "rho.lab.signal9.gg"
 gitops_repo_url: "https://gitea.apps.xna-foundation.rho.lab.signal9.gg/rho-lab/gitops.git"
-gitops_repo_url_authed: "https://{{ upstream_git_user|urlencode }}:{{ upstream_git_password|urlencode }}@https://gitea.apps.xna-foundation.rho.lab.signal9.gg/rho-lab/gitops.git"
+gitops_repo_url_authed: "https://{{ upstream_git_user|urlencode }}:{{ upstream_git_password|urlencode }}@gitea.apps.xna-foundation.rho.lab.signal9.gg/rho-lab/gitops.git"
 cluster_builds_dir: "argocd/clusters/xna-foundation/live/cluster-builds"
 
 hashicorp_vault:
