@@ -1,0 +1,134 @@
+cluster:
+  name: test-agent-rho
+  baseDomain: rho.lab.signal9.gg
+  # Maybe kubevirt or agent
+  type: agent
+  # This namespace must already exist on the cluster
+  hcpNamespace: clusters
+  # This is required for disconnected installs as of 4.14.9
+  controlPlaneOperatorImageOverride: bastion.rho.lab.signal9.gg:8443/mirror/openshift/release@sha256:cd603d06b6da4610d3c0e5c9cab466048cbdf7dae6eac3d0e062707db7be29f1
+  releaseImage: bastion.rho.lab.signal9.gg:8443/mirror/openshift/release-images:4.14.9-x86_64
+  importToACM: true
+  etcdSize: 8Gi
+  pullSecretVault: "ocp-pull-secret"
+  trustBundleConfigMap: user-ca-bundle
+  sshPubKey: "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJ04V9hGUmgioucc86ru/tFNl4buDm1KA7lPokNFKkwC admin@bastion.rho.lab.signal9.gg"
+  agent:
+    createInfraEnv: true
+    # Defaults to a new per-cluster namespace
+    agentNamespaceOverride: null
+
+certManager:
+  manageApiCert: false
+  # Ingress certificate will be created, but deployment requires an ACM policy or gitops
+  manageIngressCert: true
+
+nodePools:
+  - name: worker
+    count: 2
+    nodeDrainTimeout: 600s  
+    management:
+      autoRepair: false
+      upgradeType: Replace
+    agent:
+      agentLabels: {}
+agent:
+  infraEnv:
+    networkType: static
+    ntpServers: [172.18.60.10]
+
+
+imageDigestMirror:
+  - mirrors:
+    - bastion.rho.lab.signal9.gg:8443/mirror/openshift/release-images
+    source: quay.io/openshift-release-dev/ocp-release
+  - mirrors:
+    - bastion.rho.lab.signal9.gg:8443/mirror/openshift/release
+    source: quay.io/openshift-release-dev/ocp-v4.0-art-dev
+  - mirrors:
+    - bastion.rho.lab.signal9.gg:8443/mirror/openshift-pipelines
+    source: registry.redhat.io/openshift-pipelines
+  - mirrors:
+    - bastion.rho.lab.signal9.gg:8443/mirror/container-native-virtualization
+    source: registry.redhat.io/container-native-virtualization
+  - mirrors:
+    - bastion.rho.lab.signal9.gg:8443/mirror/rhel8
+    source: registry.redhat.io/rhel8
+  - mirrors:
+    - bastion.rho.lab.signal9.gg:8443/mirror/rhacm2
+    source: registry.redhat.io/rhacm2
+  - mirrors:
+    - bastion.rho.lab.signal9.gg:8443/mirror/advanced-cluster-security
+    source: registry.redhat.io/advanced-cluster-security
+  - mirrors:
+    - bastion.rho.lab.signal9.gg:8443/mirror/ansible-automation-platform
+    source: registry.redhat.io/ansible-automation-platform
+  - mirrors:
+    - bastion.rho.lab.signal9.gg:8443/mirror/ansible-automation-platform-24
+    source: registry.redhat.io/ansible-automation-platform-24
+  - mirrors:
+    - bastion.rho.lab.signal9.gg:8443/mirror/odf4
+    source: registry.redhat.io/odf4
+  - mirrors:
+    - bastion.rho.lab.signal9.gg:8443/mirror/openshift-gitops-1
+    source: registry.redhat.io/openshift-gitops-1
+  - mirrors:
+    - bastion.rho.lab.signal9.gg:8443/mirror/openshift4
+    source: registry.redhat.io/openshift4
+  - mirrors:
+    - bastion.rho.lab.signal9.gg:8443/mirror/amq-streams
+    source: registry.redhat.io/amq-streams
+  - mirrors:
+    - bastion.rho.lab.signal9.gg:8443/mirror/compliance
+    source: registry.redhat.io/compliance
+  - mirrors:
+    - bastion.rho.lab.signal9.gg:8443/mirror/cluster-observability-operator
+    source: registry.redhat.io/cluster-observability-operator
+  - mirrors:
+    - bastion.rho.lab.signal9.gg:8443/mirror/openshift-logging
+    source: registry.redhat.io/openshift-logging
+  - mirrors:
+    - bastion.rho.lab.signal9.gg:8443/mirror/cert-manager
+    source: registry.redhat.io/cert-manager
+  - mirrors:
+    - bastion.rho.lab.signal9.gg:8443/mirror/rhbk
+    source: registry.redhat.io/rhbk
+  - mirrors:
+    - bastion.rho.lab.signal9.gg:8443/mirror/quay
+    source: registry.redhat.io/quay
+  - mirrors:
+    - bastion.rho.lab.signal9.gg:8443/mirror/albo
+    source: registry.redhat.io/albo
+  - mirrors:
+    - bastion.rho.lab.signal9.gg:8443/mirror/rh-sso-7
+    source: registry.redhat.io/rh-sso-7
+  - mirrors:
+    - bastion.rho.lab.signal9.gg:8443/mirror/multicluster-engine
+    source: registry.redhat.io/multicluster-engine
+  - mirrors:
+    - bastion.rho.lab.signal9.gg:8443/mirror/costmanagement
+    source: registry.redhat.io/costmanagement
+  - mirrors:
+    - bastion.rho.lab.signal9.gg:8443/mirror/edo
+    source: registry.redhat.io/edo
+  - mirrors:
+    - bastion.rho.lab.signal9.gg:8443/mirror/amq7
+    source: registry.redhat.io/amq7
+  - mirrors:
+    - bastion.rho.lab.signal9.gg:8443/mirror/ubi8
+    source: registry.redhat.io/ubi8
+  - mirrors:
+    - bastion.rho.lab.signal9.gg:8443/mirror/bitnami
+    source: docker.io/bitnami
+  - mirrors:
+    - bastion.rho.lab.signal9.gg:8443/mirror/gitea
+    source: docker.io/gitea
+  - mirrors:
+    - bastion.rho.lab.signal9.gg:8443/mirror/mta
+    source: registry.redhat.io/mta
+  - mirrors:
+    - bastion.rho.lab.signal9.gg:8443/mirror/community-operator-pipeline-prod
+    source: quay.io/community-operator-pipeline-prod
+  - mirrors:
+    - bastion.rho.lab.signal9.gg:8443/mirror/rhel8
+    source: registry.redhat.io/rhel8
