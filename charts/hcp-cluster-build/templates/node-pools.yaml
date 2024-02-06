@@ -41,7 +41,7 @@ spec:
 {{ end }}
   release:
     image: {{ $.Values.cluster.releaseImage }}
-  replicas: 3
+  replicas: {{ .count }}
 
 ---
 {{ end }}
