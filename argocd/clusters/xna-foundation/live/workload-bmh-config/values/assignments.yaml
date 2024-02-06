@@ -46,15 +46,18 @@ assignments:
   - node: xf-18.rho.lab.signal9.gg
     namespace: openshift-machine-api
     assignmentType: metal3
-    extraLabels: {}
+    extraLabels:
+      app: openstack
     extraAnnotations: {}
   - node: xf-19.rho.lab.signal9.gg
     namespace: openshift-machine-api
     assignmentType: metal3
-    extraLabels: {}
+    extraLabels:
+      app: openstack
     extraAnnotations: {}
   - node: xf-20.rho.lab.signal9.gg
     namespace: openshift-machine-api
     assignmentType: metal3
-    extraLabels: {}
+    extraLabels:
+      app: openstack
     extraAnnotations: {}
