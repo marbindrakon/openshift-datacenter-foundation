@@ -25,9 +25,9 @@
     kubernetes.core.k8s_info:
       api_version: v1
       kind: Secret
-      namespace: "{{ cluster_name }}"
+      namespace: "clusters-{{ cluster_name }}"
       label_selectors:
-        - "hive.openshift.io/secret-type=kubeconfig"
+        - "hypershift.openshift.io/kubeconfig=external"
       wait: true
       wait_sleep: 10
       wait_timeout: 1200

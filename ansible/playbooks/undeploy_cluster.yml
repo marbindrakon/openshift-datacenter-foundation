@@ -3,10 +3,6 @@
   vars:
     cluster_state: absent
   tasks:
-    - name: set platform config fact
-      ansible.builtin.set_fact:
-        "{{ cluster_platform }}_platform_config": "{{ platform_configs[cluster_platform] }}"
-
     - name: include vault_config role
       ansible.builtin.include_role:
         name: vault_config
@@ -26,13 +22,3 @@
     - name: include dns role
       ansible.builtin.include_role:
         name: dns_config
-
-- hosts: loadbalancers
-  gather_facts: true
-  become: true
-  vars:
-    cluster_state: absent
-  tasks:
-    - name: include lb_config role
-      ansible.builtin.include_role:
-        name: lb_config
