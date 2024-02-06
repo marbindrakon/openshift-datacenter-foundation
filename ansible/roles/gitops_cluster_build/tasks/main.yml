@@ -9,7 +9,7 @@
   ansible.builtin.git:
     repo: "{{ gitops_repo_url_authed }}"
     dest: "{{ gitops_temp_dir.path }}"
-  no_log: true
+  no_log: false
 
 - name: set git user name
   ansible.builtin.command:
