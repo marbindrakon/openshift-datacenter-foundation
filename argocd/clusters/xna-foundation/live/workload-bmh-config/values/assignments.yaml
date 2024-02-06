@@ -23,6 +23,16 @@ assignments:
 #   infraEnvName: test-agent
 #   extraLabels: {}
 #   extraAnnotations: {}
+  - node: xf-12.rho.lab.signal9.gg
+    namespace: openshift-machine-api
+    assignmentType: metal3
+    extraLabels: {}
+    extraAnnotations: {}
+  - node: xf-13.rho.lab.signal9.gg
+    namespace: openshift-machine-api
+    assignmentType: metal3
+    extraLabels: {}
+    extraAnnotations: {}
   - node: xf-14.rho.lab.signal9.gg
     namespace: openshift-machine-api
     assignmentType: metal3
