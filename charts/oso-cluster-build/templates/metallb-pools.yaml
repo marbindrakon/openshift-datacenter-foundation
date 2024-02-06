@@ -10,7 +10,7 @@ metadata:
 spec:
   addresses:
   {{ toYaml .Values.metallbRanges.internalapi | nindent 4 }}
-  autoAssign: true
+  autoAssign: false
   avoidBuggyIPs: false
 ---
 apiVersion: metallb.io/v1beta1
@@ -24,6 +24,6 @@ metadata:
 spec:
   addresses:
   {{ toYaml .Values.metallbRanges.ctlplane | nindent 4 }}
-  autoAssign: true
+  autoAssign: false
   avoidBuggyIPs: false
 ---
