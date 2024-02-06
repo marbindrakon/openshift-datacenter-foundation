@@ -1,0 +1,6 @@
+---
+# cluster_platform must be set to openstack or infra_env_hybrid when using the main.yml entrypoint
+cluster_platform: ""
+cluster_name: ""
+# cluster_state should be present or absent
+cluster_state: present

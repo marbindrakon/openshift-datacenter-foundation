@@ -1,0 +1,21 @@
+---
+version: 3
+images:
+  base_image:
+    name: quay.rho.lab.signal9.gg/mirror/ansible-automation-platform-24/ee-minimal-rhel8@sha256:0851fb85bf5a75831277b54c636da1854d50a5ac2a5fa2ddc1c6b768cb02ae77
+
+dependencies:
+  galaxy: collections/requirements.yml
+  python: python-requirements.txt
+
+additional_build_files:
+  - src: files
+    dest: resources
+
+additional_build_steps:
+  prepend_final:
+    - COPY _build/resources/signal9-ca.crt /etc/pki/ca-trust/source/anchors/signal9-ca.crt
+    - RUN /bin/update-ca-trust
+
+options:
+  package_manager_path: /usr/bin/microdnf

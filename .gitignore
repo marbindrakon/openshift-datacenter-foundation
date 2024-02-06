@@ -1,0 +1,3 @@
+*.swp
+ansible/ee-image/context
+*.bak

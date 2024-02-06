@@ -1,0 +1,21 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: {{ cluster_name }}-deploy
+  namespace: openshift-gitops
+spec:
+  destination:
+    namespace: openshift-gitops
+    server: "https://kubernetes.default.svc"
+  project: default
+  syncPolicy:
+    automated: {}
+    syncOptions:
+      - RespectIgnoreDifferences=true
+  source:
+    repoURL: "{{ gitops_repo_url }}"
+    path: "charts/hcp-cluster-build"
+    targetRevision: HEAD
+    helm:
+      valueFiles:
+        - "../../argocd/clusters/workload-clusters/{{ cluster_name }}/helm-values/build-values.yaml"

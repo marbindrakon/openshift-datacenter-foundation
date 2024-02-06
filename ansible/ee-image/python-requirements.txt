@@ -1,0 +1,6 @@
+kubernetes==25.3.0
+hvac==1.0.2
+openstackclient==4.0.0
+pyOpenSSL==21.0.0
+cryptography==37.0.2
+infoblox-client==0.6.0

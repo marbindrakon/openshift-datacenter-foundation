@@ -1,0 +1,11 @@
+---
+collections:
+  - name: community.general
+  - name: kubernetes.core
+  - name: ansible.netcommon
+  - name: https://github.com/marbindrakon/community.hashi_vault.git
+    type: git
+    version: delete_function
+  - name: amazon.aws
+  - name: openstack.cloud
+  - name: infoblox.nios_modules

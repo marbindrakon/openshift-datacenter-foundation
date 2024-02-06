@@ -1,0 +1,32 @@
+---
+- name: create ingress record for agent platform
+  infoblox.nios_modules.nios_a_record:
+    provider:
+      host: "{{ nios_config.infoblox_host }}"
+    view: "{{ item }}"
+    name: "apps.{{ cluster_name }}.{{ base_domain }}"
+    ipv4addr: "{{ ingress_vip }}"
+    state: "{{ cluster_state }}"
+  loop: "{{ nios_config.dns_views }}"
+  when: cluster_platform == "agent"
+
+- name: create ingress wildcard for agent platform
+  infoblox.nios_modules.nios_cname_record:
+    provider:
+      host: "{{ nios_config.infoblox_host }}"
+    view: "{{ item }}"
+    name: "*.apps.{{ cluster_name }}.{{ base_domain }}"
+    canonical: "apps.{{ cluster_name }}.{{ base_domain }}"
+    state: "{{ cluster_state }}"
+  loop: "{{ nios_config.dns_views }}"
+  when: cluster_platform == "agent"
+
+- name: create api-int alias
+  infoblox.nios_modules.nios_cname_record:
+    provider:
+      host: "{{ nios_config.infoblox_host }}"
+    view: "{{ item }}"
+    name: "api-int.{{ cluster_name }}.{{ base_domain }}"
+    canonical: "api.{{ cluster_name }}.{{ base_domain }}"
+    state: "{{ cluster_state }}"
+  loop: "{{ nios_config.dns_views }}"

@@ -1,0 +1,5 @@
+all:
+  children:
+    bastion:
+      hosts:
+        bastion.rho.lab.signal9.gg: {}

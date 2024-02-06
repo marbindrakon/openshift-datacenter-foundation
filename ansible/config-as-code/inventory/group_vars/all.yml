@@ -1,0 +1,5 @@
+aap_vault_auth_role: rho-aap
+aap_vault_url: https://vault.apps.xna-foundation.rho.lab.signal9.gg
+infoblox_url: https://rho-dns-a.rho.lab.signal9.gg
+orgs: RHO
+vault_controller_validate_certs: true

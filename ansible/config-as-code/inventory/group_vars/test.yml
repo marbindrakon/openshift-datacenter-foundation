@@ -1,0 +1,3 @@
+aap_vault_auth_path: k8s-xna-foundation
+gitops_ee_image: quay.rho.lab.sginal9.gg/signal9-ee/openshift-iac:latest
+vault_controller_hostname: aap.rho.lab.signal9.gg
