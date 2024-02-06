@@ -38,13 +38,13 @@
 - name: template cluster deployment values
   ansible.builtin.template:
     src: "{{ cluster_platform }}-build-values.yaml.j2"
-    dest: "{{ gitops_temp_dir.path }}/argocd/clusters/managed-clusters/{{ cluster_name }}/helm-values/build-values.yaml"
+    dest: "{{ gitops_temp_dir.path }}/argocd/clusters/workload-clusters/{{ cluster_name }}/helm-values/build-values.yaml"
   when: cluster_state == "present"
 
 - name: template base config values
   ansible.builtin.template:
     src: "base-config-values.yaml.j2"
-    dest: "{{ gitops_temp_dir.path }}/argocd/clusters/managed-clusters/{{ cluster_name }}/helm-values/base-config-values.yaml"
+    dest: "{{ gitops_temp_dir.path }}/argocd/clusters/workload-clusters/{{ cluster_name }}/helm-values/base-config-values.yaml"
   when: cluster_state == "present"
 
 - name: run git add for new files
@@ -52,7 +52,7 @@
     cmd: "/usr/bin/git add {{ item }}"
     chdir: "{{ gitops_temp_dir.path }}"
   loop:
-    - "argocd/clusters/managed-clusters/{{ cluster_name }}"
+    - "argocd/clusters/workload-clusters/{{ cluster_name }}"
     - "{{ cluster_builds_dir }}"
   when: cluster_state == "present"
 
@@ -71,7 +71,7 @@
     chdir: "{{ gitops_temp_dir.path }}"
     removes: "{{ gitops_temp_dir.path }}/{{ item }}"
   loop:
-    - "argocd/clusters/managed-clusters/{{ cluster_name }}"
+    - "argocd/clusters/workload-clusters/{{ cluster_name }}"
     - "{{ cluster_builds_dir }}/{{ cluster_name }}.yaml"
   when: cluster_state == "absent" and gitops_retain_cluster_configs == false
 
