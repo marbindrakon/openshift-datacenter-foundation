@@ -63,7 +63,7 @@ nios_config:
   dns_views:
     - Internal
     - External
-  metallb_network_container: 172.18.72.0/22
+  metallb_network_container: 172.18.72.0/21
 
 platform_configs:
   kubevirt:
