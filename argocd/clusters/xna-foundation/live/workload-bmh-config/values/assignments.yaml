@@ -1,28 +1,28 @@
 assignments:
-# - node: xf-10.rho.lab.signal9.gg
-#   namespace: test-infraenv
-#   assignmentType: agent
-#   infraEnvName: test-infraenv
-#   extraLabels: {}
-#   extraAnnotations: {}
-# - node: xf-11.rho.lab.signal9.gg
-#   namespace: clusters-test-agent
-#   assignmentType: agent
-#   infraEnvName: test-agent
-#   extraLabels: {}
-#   extraAnnotations: {}
-# - node: xf-12.rho.lab.signal9.gg
-#   namespace: clusters-test-agent
-#   assignmentType: agent
-#   infraEnvName: test-agent
-#   extraLabels: {}
-#   extraAnnotations: {}
-# - node: xf-13.rho.lab.signal9.gg
-#   namespace: clusters-test-agent
-#   assignmentType: agent
-#   infraEnvName: test-agent
-#   extraLabels: {}
-#   extraAnnotations: {}
+  - node: xf-10.rho.lab.signal9.gg
+    namespace: openshift-machine-api
+    assignmentType: metal3
+    extraLabels:
+      app: openstack
+    extraAnnotations: {}
+  - node: xf-11.rho.lab.signal9.gg
+    namespace: openshift-machine-api
+    assignmentType: metal3
+    extraLabels:
+      app: openstack
+    extraAnnotations: {}
+  - node: xf-12.rho.lab.signal9.gg
+    namespace: clusters-test-agent
+    assignmentType: agent
+    infraEnvName: test-agent
+    extraLabels: {}
+    extraAnnotations: {}
+  - node: xf-13.rho.lab.signal9.gg
+    namespace: clusters-test-agent
+    assignmentType: agent
+    infraEnvName: test-agent
+    extraLabels: {}
+    extraAnnotations: {}
   - node: xf-14.rho.lab.signal9.gg
     namespace: openshift-machine-api
     assignmentType: metal3
