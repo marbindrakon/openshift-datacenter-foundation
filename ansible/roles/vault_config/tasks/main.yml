@@ -7,6 +7,7 @@
 - name: list enabled auth methods
   community.hashi_vault.vault_read:
     url: "{{ hashicorp_vault['url'] }}"
+    validate_certs: false
     auth_method: jwt
     mount_point: "{{ hashicorp_vault['auth_mount'] }}"
     role_id: "{{ hashicorp_vault['auth_role'] }}"
@@ -51,6 +52,7 @@
   - name: write k8s auth method to vault
     community.hashi_vault.vault_write:
       url: "{{ hashicorp_vault['url'] }}"
+      validate_certs: false
       auth_method: jwt
       mount_point: "{{ hashicorp_vault['auth_mount'] }}"
       role_id: "{{ hashicorp_vault['auth_role'] }}"
@@ -66,6 +68,7 @@
   - name: write k8s auth method config to vault
     community.hashi_vault.vault_write:
       url: "{{ hashicorp_vault['url'] }}"
+      validate_certs: false
       auth_method: jwt
       mount_point: "{{ hashicorp_vault['auth_mount'] }}"
       role_id: "{{ hashicorp_vault['auth_role'] }}"
@@ -80,6 +83,7 @@
   - name: write external-secrets-operator role to vault
     community.hashi_vault.vault_write:
       url: "{{ hashicorp_vault['url'] }}"
+      validate_certs: false
       auth_method: jwt
       mount_point: "{{ hashicorp_vault['auth_mount'] }}"
       role_id: "{{ hashicorp_vault['auth_role'] }}"
@@ -99,6 +103,7 @@
 - name: remove auth method
   community.hashi_vault.vault_delete:
     url: "{{ hashicorp_vault['url'] }}"
+    validate_certs: false
     auth_method: jwt
     mount_point: "{{ hashicorp_vault['auth_mount'] }}"
     role_id: "{{ hashicorp_vault['auth_role'] }}"

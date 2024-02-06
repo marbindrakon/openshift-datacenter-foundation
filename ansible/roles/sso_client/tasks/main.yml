@@ -48,6 +48,7 @@
 - name: write client secret to vault
   community.hashi_vault.vault_write:
     url: "{{ hashicorp_vault['url'] }}"
+    validate_certs: false
     auth_method: jwt
     mount_point: "{{ hashicorp_vault['auth_mount'] }}"
     role_id: "{{ hashicorp_vault['auth_role'] }}"
@@ -62,6 +63,7 @@
 - name: delete client secret from vault
   community.hashi_vault.vault_delete:
     url: "{{ hashicorp_vault['url'] }}"
+    validate_certs: false
     auth_method: jwt
     mount_point: "{{ hashicorp_vault['auth_mount'] }}"
     role_id: "{{ hashicorp_vault['auth_role'] }}"
