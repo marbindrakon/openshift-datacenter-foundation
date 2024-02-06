@@ -18,7 +18,7 @@
     enabled: true
     realm: "{{ cluster_sso['client_realm'] }}"
     redirect_uris:
-      - "https://oauth-openshift.apps.{{ cluster_name }}.{{ ingress_base_domain }}/oauth2callback/{{ cluster_sso['console_sso_label'] }}"
+      - "{{ cluster_sso.callback_url }}/oauth2callback/{{ cluster_sso['console_sso_label'] }}"
     protocol_mappers:
       - name: "client roles"
         consentRequired: false

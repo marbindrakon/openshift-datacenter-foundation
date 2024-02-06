@@ -53,6 +53,7 @@ cluster_ntp_sources: "{{ cluster_dns_servers }}"
 cluster_sso:
   client_id: "{{ cluster_name }}-openshift"
   sso_url: https://sso.rho.lab.signal9.gg
+  callback_url: "https://oauth-clusters-{{ cluster_name }}.apps.xna-foundation.rho.lab.signal9.gg"
   admin_realm: master
   role_source_client: hcp-hosted-clusters
   client_realm: "RHO"
