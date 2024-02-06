@@ -80,7 +80,7 @@ controller_templates:
           min: 0
           max: 1024
           new_question: False
-          default: openstack
+          default: kubevirt
           choices:
             - kubevirt
             - agent
