@@ -22,6 +22,8 @@ spec:
           targetRevision: main
           path: 'charts/hcp-base-config'
           helm:
+            valuesObject:
+              platform: "{{ metadata.labels.hcp-platform }}"
             valueFiles:
               - '../../argocd/clusters/workload-clusters/{{ name }}/helm-values/base-config-values.yaml'
       syncPolicy:
