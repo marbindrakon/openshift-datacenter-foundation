@@ -37,6 +37,8 @@ spec:
         - mappingMethod: claim
           name: RHO
           openID:
+            ca:
+              name: openid-ca-bundle
             claims:
               email:
               - email
