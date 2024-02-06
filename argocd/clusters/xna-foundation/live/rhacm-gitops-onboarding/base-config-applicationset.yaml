@@ -1,0 +1,30 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: base-config-applicationset
+  namespace: openshift-gitops
+spec:
+  generators:
+  - clusterDecisionResource:
+      configMapRef: spoke-gitops-generator
+      labelSelector:
+        matchLabels:
+          spoke-gitops: 'true'
+      requeueAfterSeconds: 30
+  template:
+    metadata:
+      name: '{{ name }}-base-config'
+    spec:
+      destination:
+        namespace: default
+        server: '{{ server }}'
+      project: default
+      sources: 
+        - repoURL: https://gitea.apps.xna-foundation.rho.lab.signal9.gg/rho-lab/gitops.git
+          targetRevision: main
+          path: 'charts/hcp-base-config'
+          helm:
+            valueFiles:
+              - '../../argocd/clusters/workload-clusters/{{ name }}/helm-values/base-config-values.yaml'
+      syncPolicy:
+        automated: {}
