@@ -1,13 +1,15 @@
 assignments:
   - node: xf-10.rho.lab.signal9.gg
-    namespace: openshift-machine-api
-    assignmentType: metal3
+    namespace: clusters-test-agent-rho
+    assignmentType: agent
+    infraEnvName: test-agent-rho
     extraLabels:
       app: openstack
     extraAnnotations: {}
   - node: xf-11.rho.lab.signal9.gg
-    namespace: openshift-machine-api
-    assignmentType: metal3
+    namespace: clusters-test-agent-rho
+    assignmentType: agent
+    infraEnvName: test-agent-rho
     extraLabels:
       app: openstack
     extraAnnotations: {}
