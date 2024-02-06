@@ -56,7 +56,7 @@
     data:
       data:
         clientSecret: "{{ sso_client_secret_resp.clientsecret_info.value }}"
-  no_log: true
+  #no_log: true
   when: cluster_state == "present"
 
 - name: delete client secret from vault
